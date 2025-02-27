@@ -142,6 +142,20 @@
                 transform: translate(0, 0px);
             }
         }
+
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+        }
     </style>
 </head>
 
@@ -160,9 +174,9 @@
 
     <!-- Section 1 -->
     <section class="section-container overflow-hidden">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 items-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
             <!-- Left Content-->
-            <div class="space-y-8 lg:col-span-3" data-aos="fade-right">
+            <div class="space-y-8" data-aos="fade-right">
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight title-underline">
                     Your Nursing Career in Japan Starts Here
                     <span class="text-red-600">– High Salary, Growth & Stability Await You!</span>
@@ -183,12 +197,12 @@
             </div>
 
             <!-- Right Content-->
-            <div class="relative lg:col-span-2">
+            <div class="relative">
                 <div class="flex flex-col items-center">
-                    <div class="img-hover-zoom mb-6 w-full max-w-lg mx-auto h-auto rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.1)]"
+                    <div class="img-hover-zoom mb-6 w-full max-w-xl mx-auto h-auto rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.1)]"
                         data-aos="fade-left">
-                        <img src="./student.png" alt="Nurse in Japan"
-                            class="w-full max-w-md h-auto rounded-2xl floating" />
+                        <img src="./nursing-career.jpg" alt="Nurse in Japan"
+                            class="w-full max-w-xl h-auto rounded-2xl " />
                     </div>
 
                     <div class="stats-grid w-full" data-aos="fade-left" data-aos-delay="300">
@@ -216,10 +230,16 @@
     <section class="section-container overflow-hidden bg-white/30 backdrop-blur-md rounded-3xl custom-shadow">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <!-- Left content -->
-            <div class="relative overflow-hidden  rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.1)] " data-aos="fade-right">
-                <div class="img-hover-zoom relative floating">
-                    <img src="./student.png" alt="Nurse in Japan"
-                        class="w-full max-w-lg mx-auto h-auto object-contain " />
+            <div class="relative overflow-hidden rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.1)]" data-aos="fade-right">
+                <div class="slider-container relative">
+                    <div class="slider">
+                        <img src="./IMG_8128.JPG" alt="Nurse in Japan"
+                            class="slide w-full max-w-2xl mx-auto h-auto object-contain">
+                        <img src="./IMG_8072.JPG" alt="Nursing Career"
+                            class="slide w-full max-w-2xl mx-auto h-auto object-contain">
+                        <img src="./IMG_8212.JPG" alt="Nursing Career"
+                            class="slide w-full max-w-2xl mx-auto h-auto object-contain">
+                    </div>
                 </div>
             </div>
 
@@ -333,16 +353,20 @@
             </div>
 
             <!-- Right content -->
-            <div class="relative overflow-hidden order-1 md:order-2 rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.1)] "
+            <div class="relative overflow-hidden order-1 md:order-2 rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.1)]"
                 data-aos="fade-left">
-                <div
-                    class="absolute top-0 right-0 bg-red-600/80 text-white py-2 px-4 rounded-bl-lg rounded-tr-lg z-10 ">
+                <div class="absolute top-0 right-0 bg-red-600/80 text-white py-2 px-4 rounded-bl-lg rounded-tr-lg z-10">
                     <span class="font-semibold">Qualified Nurses</span>
                 </div>
-                <div class="img-hover-zoom relative floating">
-
-                    <img src="./student.png" alt="Nurse in Japan"
-                        class="w-full max-w-lg mx-auto h-auto object-contain " />
+                <div class="slider-container">
+                    <div class="slider">
+                        <img src="./IMG_2358.JPG" alt="Nurse in Japan"
+                            class="slide w-full max-w-xl mx-auto h-auto object-contain">
+                        <img src="./IMG_3655.JPG" alt="Qualified Nurses"
+                            class="slide w-full max-w-xl mx-auto h-auto object-contain">
+                        <img src="./IMG_4886.JPG" alt="Nursing Career"
+                            class="slide w-full max-w-xl mx-auto h-auto object-contain">
+                    </div>
                 </div>
             </div>
         </div>
@@ -366,10 +390,10 @@
                         class="absolute top-0 left-0 bg-gradient-to-r from-red-600 to-red-500 text-white py-2 px-4 rounded-br-lg rounded-tl-lg z-10 shadow-[0_0_25px_rgba(0,0,0,0.1)]">
                         <span class="font-semibold">Success Stories</span>
                     </div>
-                    <div class="img-hover-zoom relative floating">
+                    <div class="img-hover-zoom relative ">
 
-                        <img src="./student.png" alt="Nurse in Japan"
-                            class="w-full max-w-lg mx-auto h-auto object-contain " />
+                        <img src="./IMG-2024.JPG" alt="Nurse in Japan"
+                            class="w-full max-w-2xl mx-auto h-auto object-contain " />
                     </div>
 
                 </div>
@@ -410,11 +434,11 @@
                     <li class="feature-card p-6 rounded-xl shadow-md col-span-1">
                         <div
                             class="mb-4 bg-orange-100 w-14 h-14 rounded-full flex items-center justify-center text-orange-600">
-                            <i class="fas fa-passport text-2xl"></i>
+                            <i class="fa-solid fa-hospital-user text-2xl"></i>
                         </div>
-                        <h3 class="font-bold text-lg text-gray-900 mb-2">Work Visa & PR Pathway</h3>
-                        <p class="text-gray-700">Start with a legal work visa and explore permanent residency
-                            opportunities.</p>
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">Advanced Healthcare Exposure</h3>
+                        <p class="text-gray-700">Gain experience with cutting-edge medical technology and practices.
+                        </p>
                     </li>
                 </ul>
                 <div class="flex justify-center pt-4">
@@ -447,6 +471,22 @@
             });
         });
 
+        // Auto Slider functionality
+        const sliders = document.querySelectorAll('.slider');
+        const slidesArrays = Array.from(sliders).map(slider => slider.querySelectorAll('.slide'));
+        let currentSlides = Array(sliders.length).fill(0);
+
+        function nextSlide(sliderIndex) {
+            const slider = sliders[sliderIndex];
+            const slides = slidesArrays[sliderIndex];
+            currentSlides[sliderIndex] = (currentSlides[sliderIndex] + 1) % slides.length;
+            slider.style.transform = `translateX(-${currentSlides[sliderIndex] * 100}%)`;
+        }
+
+        // Change slides every 3 seconds for all sliders
+        sliders.forEach((_, index) => {
+            setInterval(() => nextSlide(index), 3000);
+        });
     </script>
 </body>
 
