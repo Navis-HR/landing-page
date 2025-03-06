@@ -156,6 +156,54 @@
         .slide {
             min-width: 100%;
         }
+
+        /* Add these toast notification styles */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            color: white;
+            font-weight: 500;
+            min-width: 250px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            animation: slideIn 0.3s ease-in-out, fadeOut 0.5s ease-in-out 2.5s forwards;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .toast-success {
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+        }
+
+        .toast-error {
+            background: linear-gradient(135deg, #f87171 0%, #dc2626 100%);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 
@@ -455,10 +503,10 @@
     <!-- Testimonials Section -->
     <section class="section-container overflow-hidden py-16">
         <div class="text-center mb-12" data-aos="fade-up">
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                What Our Nurses Say
+            <h2 class="text-2xl sm:text-3xl lg:text-3xl font-bold text-gray-900 mb-4 uppercase">
+                From dreams to reality—hear how Navis HR helped <br />nurses build their future in Japan!
             </h2>
-            <p class="text-xl text-red-600 font-semibold">Real Stories from Real Nurses</p>
+            <p class="text-xl text-red-600 font-semibold">Nurses Trust Us—Here's Why!</p>
             <div class="w-24 h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto mt-4 rounded-full"></div>
         </div>
 
@@ -999,12 +1047,127 @@
                 </div>
             </div>
 
-            <!-- Dots Navigation - Enhanced with active state -->
+            <!-- Dots Navigation -->
             <div class="flex justify-center mt-8 gap-3" id="testimonial-dots">
-                <!-- Dots will be dynamically inserted here -->
             </div>
         </div>
 
+    </section>
+
+    <!-- Video Section -->
+    <section class="section-container overflow-hidden bg-white/30 backdrop-blur-md rounded-3xl custom-shadow">
+        <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-3xl md:text-4xl lg:text-3xl font-bold text-gray-900 mb-4 uppercase">
+                Success in Their Own Words – Watch Their Journey!
+            </h2>
+            <p class="text-xl text-red-600 font-semibold">Success Speaks!</p>
+            <div class="w-24 h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Video Slider Container -->
+        <div class="relative px-4 md:px-12">
+            <button id="prev-btn"
+                class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 md:p-3 shadow-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-gray-700" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+
+            <button id="next-btn"
+                class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 md:p-3 shadow-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-gray-700" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+
+            <!-- Video Slider -->
+            <div class="overflow-hidden">
+                <div id="video-slider" class="flex transition-transform duration-500 ease-in-out ">
+
+                    <!-- Video 1 -->
+                    <div
+                        class="video-slide min-w-full sm:min-w-[85%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl bg-white">
+                        <div class="relative pb-[56.25%] h-0">
+                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/Sd1wFB1WRnk?rel=0" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+                        <!-- Removed the container div for video title and description -->
+                        <!-- <div class="p-4 text-center">
+                            <h3 class="font-semibold text-gray-800">Laura's Journey</h3>
+                            <p class="text-gray-600 text-sm">ICU Nurse - 8 Years Experience</p>
+                        </div> -->
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div
+                        class="video-slide min-w-full sm:min-w-[85%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl bg-white">
+                        <div class="relative pb-[56.25%] h-0">
+                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/MoHsRBWtS7o?rel=0" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+                        <!-- Removed the container div for video title and description -->
+                        <!-- <div class="p-4 text-center">
+                            <h3 class="font-semibold text-gray-800">Michael's Experience</h3>
+                            <p class="text-gray-600 text-sm">ER Nurse - 5 Years Experience</p>
+                        </div> -->
+                    </div>
+
+                    <!-- Video 3 -->
+                    <div
+                        class="video-slide min-w-full sm:min-w-[85%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl bg-white">
+                        <div class="relative pb-[56.25%] h-0">
+                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/1vYvYM2qAJk?rel=0" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+                        <!-- Removed the container div for video title and description -->
+                        <!-- <div class="p-4 text-center">
+                            <h3 class="font-semibold text-gray-800">Sarah's Perspective</h3>
+                            <p class="text-gray-600 text-sm">Pediatric Nurse - 12 Years Experience</p>
+                        </div> -->
+                    </div>
+
+                    <!-- Video 4 -->
+                    <div
+                        class="video-slide min-w-full sm:min-w-[85%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl bg-white">
+                        <div class="relative pb-[56.25%] h-0">
+                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/-O9I1N7CoFg?rel=0" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+                        <!-- Removed the container div for video title and description -->
+                        <!-- <div class="p-4 text-center">
+                            <h3 class="font-semibold text-gray-800">David's Testimony</h3>
+                            <p class="text-gray-600 text-sm">Travel Nurse - 7 Years Experience</p>
+                        </div> -->
+                    </div>
+
+                    <!-- Video 5 -->
+                    <div
+                        class="video-slide min-w-full sm:min-w-[85%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl bg-white">
+                        <div class="relative pb-[56.25%] h-0">
+                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/ikDQY_nZ6JE?rel=0" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+                        <!-- Removed the container div for video title and description -->
+                        <!-- <div class="p-4 text-center">
+                            <h3 class="font-semibold text-gray-800">Jennifer's Story</h3>
+                            <p class="text-gray-600 text-sm">Oncology Nurse - 10 Years Experience</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dots Navigation -->
+        <div id="dots-container" class="flex justify-center mt-8 space-x-2">
+            <!-- Dots will be generated by JavaScript -->
+        </div>
     </section>
 
     <script>
@@ -1140,7 +1303,7 @@
         }
 
         // Auto-advance testimonials every 5 seconds
-        let testimonialInterval = setInterval(() => moveTestimonials('next'), 5000);
+        let testimonialInterval = setInterval(() => moveTestimonials('next'), 3000);
 
         // Pause auto-advance on hover
         testimonialContainer.addEventListener('mouseenter', () => {
@@ -1148,7 +1311,7 @@
         });
 
         testimonialContainer.addEventListener('mouseleave', () => {
-            testimonialInterval = setInterval(() => moveTestimonials('next'), 5000);
+            testimonialInterval = setInterval(() => moveTestimonials('next'), 3000);
         });
 
         // Add the AOS initialization
@@ -1162,6 +1325,555 @@
         });
     </script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Elements
+            const slider = document.getElementById('video-slider');
+            const originalSlides = document.querySelectorAll('.video-slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const dotsContainer = document.getElementById('dots-container');
+
+            // Clone slides for infinite loop
+            const slidesToClone = [...originalSlides].map(slide => slide.cloneNode(true));
+            slidesToClone.forEach(slide => slider.appendChild(slide));
+
+            // Variables
+            let currentIndex = 0;
+            let slideWidth = 0;
+            let gap = 16; // Default gap
+            let slidesPerView = getItemsPerView();
+            let totalSlides = originalSlides.length;
+            let isTransitioning = false;
+            let autoplayInterval;
+
+            // Create dot indicators
+            function createDots() {
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('w-3', 'h-3', 'rounded-full', 'transition-colors', 'duration-200', 'focus:outline-none');
+                    dot.setAttribute('data-index', i);
+                    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+
+                    if (i === currentIndex % totalSlides) {
+                        dot.classList.add('bg-red-600');
+                    } else {
+                        dot.classList.add('bg-gray-300', 'hover:bg-red-400');
+                    }
+
+                    dot.addEventListener('click', () => {
+                        goToSlide(i);
+                    });
+
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            // Calculate items per view based on screen width
+            function getItemsPerView() {
+                if (window.innerWidth >= 1024) return 3;
+                if (window.innerWidth >= 768) return 2;
+                if (window.innerWidth >= 640) return 1.15; // Show a peek of next slide on small screens
+                return 1;
+            }
+
+            // Calculate dimensions
+            function calculateDimensions() {
+                const containerWidth = slider.parentElement.clientWidth;
+                slidesPerView = getItemsPerView();
+
+                if (slidesPerView === 3) {
+                    gap = 16; // Larger gap for desktop
+                    slideWidth = (containerWidth - (gap * 2)) / 3;
+                } else if (slidesPerView === 2) {
+                    gap = 12; // Medium gap for tablets
+                    slideWidth = (containerWidth - gap) / 2;
+                } else if (slidesPerView === 1.15) {
+                    gap = 10; // Small gap for small screens with peek
+                    slideWidth = containerWidth / 1.15 - gap;
+                } else {
+                    gap = 0; // No gap for extra small screens
+                    slideWidth = containerWidth;
+                }
+
+                // Update slide widths
+                document.querySelectorAll('.video-slide').forEach(slide => {
+                    slide.style.minWidth = `${slideWidth}px`;
+                    slide.style.marginRight = `${gap}px`;
+                });
+
+                // Force immediate update of slider position
+                updateSlider(true);
+            }
+
+            // Update slider position
+            function updateSlider(immediate = false) {
+                const offset = -(currentIndex * (slideWidth + gap));
+
+                if (immediate) {
+                    slider.style.transition = 'none';
+                    slider.style.transform = `translateX(${offset}px)`;
+                    // Force reflow
+                    slider.offsetHeight;
+                    slider.style.transition = 'transform 500ms ease';
+                } else {
+                    slider.style.transform = `translateX(${offset}px)`;
+                }
+
+                // Update dots
+                const dots = dotsContainer.querySelectorAll('button');
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex % totalSlides) {
+                        dot.classList.remove('bg-gray-300', 'hover:bg-red-400');
+                        dot.classList.add('bg-red-600');
+                    } else {
+                        dot.classList.remove('bg-red-600');
+                        dot.classList.add('bg-gray-300', 'hover:bg-red-400');
+                    }
+                });
+            }
+
+            // Go to specific slide
+            function goToSlide(index) {
+                currentIndex = index;
+                updateSlider();
+            }
+
+            // Handle infinite loop logic
+            function handleInfiniteLoop() {
+                if (currentIndex >= totalSlides) {
+                    // We've gone past the end, jump to the beginning (clone)
+                    setTimeout(() => {
+                        currentIndex = 0;
+                        updateSlider(true);
+                        isTransitioning = false;
+                    }, 500); // Match this to your transition duration
+                } else if (currentIndex < 0) {
+                    // We've gone before the beginning, jump to the end (clone)
+                    setTimeout(() => {
+                        currentIndex = totalSlides - 1;
+                        updateSlider(true);
+                        isTransitioning = false;
+                    }, 500);
+                } else {
+                    isTransitioning = false;
+                }
+            }
+
+            // Navigation
+            prevBtn.addEventListener('click', () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIndex--;
+                updateSlider();
+                handleInfiniteLoop();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIndex++;
+                updateSlider();
+                handleInfiniteLoop();
+            });
+
+            // Autoplay functionality
+            function startAutoplay() {
+                autoplayInterval = setInterval(() => {
+                    if (!isTransitioning) {
+                        isTransitioning = true;
+                        currentIndex++;
+                        updateSlider();
+                        handleInfiniteLoop();
+                    }
+                }, 3000); // Change slides every 5 seconds
+            }
+
+            function stopAutoplay() {
+                clearInterval(autoplayInterval);
+            }
+
+            // Touch events for mobile swiping
+            let touchStartX = 0;
+            let touchMoveX = 0;
+            let isDragging = false;
+
+            slider.addEventListener('touchstart', e => {
+                touchStartX = e.touches[0].clientX;
+                isDragging = true;
+                stopAutoplay();
+            }, { passive: true });
+
+            slider.addEventListener('touchmove', e => {
+                if (!isDragging) return;
+                touchMoveX = e.touches[0].clientX;
+                const diffX = touchStartX - touchMoveX;
+
+                // Add resistance at the edges
+                if ((currentIndex === 0 && diffX < 0) || (currentIndex === totalSlides * 2 - 1 && diffX > 0)) {
+                    slider.style.transform = `translateX(${-(currentIndex * (slideWidth + gap)) - (diffX / 2.5)}px)`;
+                } else {
+                    slider.style.transform = `translateX(${-(currentIndex * (slideWidth + gap)) - diffX}px)`;
+                }
+            }, { passive: true });
+
+            slider.addEventListener('touchend', e => {
+                if (!isDragging) return;
+
+                const diffX = touchStartX - touchMoveX;
+                const threshold = slideWidth / 3; // Need to drag at least 1/3 of slide width
+
+                if (Math.abs(diffX) > threshold) {
+                    if (diffX > 0) {
+                        // Swipe left - go next
+                        if (!isTransitioning) {
+                            isTransitioning = true;
+                            currentIndex++;
+                            updateSlider();
+                            handleInfiniteLoop();
+                        }
+                    } else {
+                        // Swipe right - go prev
+                        if (!isTransitioning) {
+                            isTransitioning = true;
+                            currentIndex--;
+                            updateSlider();
+                            handleInfiniteLoop();
+                        }
+                    }
+                } else {
+                    // Return to original position
+                    updateSlider();
+                }
+
+                isDragging = false;
+                startAutoplay();
+            }, { passive: true });
+
+            // Pause autoplay on hover/focus
+            slider.addEventListener('mouseenter', stopAutoplay);
+            slider.addEventListener('mouseleave', startAutoplay);
+            prevBtn.addEventListener('focus', stopAutoplay);
+            prevBtn.addEventListener('blur', startAutoplay);
+            nextBtn.addEventListener('focus', stopAutoplay);
+            nextBtn.addEventListener('blur', startAutoplay);
+
+            // Transition end event to remove transition when needed
+            slider.addEventListener('transitionend', () => {
+                if (currentIndex >= totalSlides || currentIndex < 0) {
+                    handleInfiniteLoop();
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                calculateDimensions();
+            });
+
+            // Initialize
+            calculateDimensions();
+            createDots();
+            startAutoplay();
+
+            // Preload next slide images on smaller screens for smoother scrolling
+            if (window.innerWidth < 768) {
+                const preloadNextSlides = () => {
+                    const nextIndex = (currentIndex + 1) % (originalSlides.length * 2);
+                    const nextSlide = document.querySelectorAll('.video-slide')[nextIndex];
+                    if (nextSlide) {
+                        const iframe = nextSlide.querySelector('iframe');
+                        if (iframe && !iframe.src) {
+                            iframe.src = iframe.getAttribute('data-src');
+                        }
+                    }
+                };
+
+                preloadNextSlides();
+                slider.addEventListener('transitionend', preloadNextSlides);
+            }
+        });
+    </script>
+
+
+    <!-- Form Modal -->
+    <div id="applicationModal" class="fixed inset-0 z-50 hidden">
+        <!-- Modal backdrop -->
+        <div class="absolute inset-0 bg-black bg-opacity-50 transition-opacity"></div>
+
+        <!-- Modal content -->
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full relative">
+                <!-- Close button -->
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+
+                <h2 class="text-2xl font-semibold text-center mb-6 uppercase">Apply for Japan Job Opportunity</h2>
+                <form id="applicationForm">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="fullName">Full Name</label>
+                        <input
+                            class="appearance-none border-[1.5px] border-gray-300 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-blue-200 focus:shadow-outline"
+                            id="fullName" type="text" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="phoneNumber">Phone Number</label>
+                        <input
+                            class="appearance-none border-[1.5px] border-gray-300 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-blue-200 focus:shadow-outline"
+                            id="phoneNumber" type="tel" placeholder="+91 Enter your phone number" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Education</label>
+                        <div class="flex flex-wrap items-center gap-4">
+                            <div class="flex items-center">
+                                <input type="radio" class="mr-2" name="education" value="ANM" id="anm" required>
+                                <label for="anm">ANM</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" class="mr-2" name="education" value="GNM" id="gnm">
+                                <label for="gnm">GNM</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" class="mr-2" name="education" value="BSc Nursing" id="bsc">
+                                <label for="bsc">BSc (Nursing)</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" class="mr-2" name="education" value="Other" id="other">
+                                <label for="other">Other</label>
+                            </div>
+                        </div>
+                        <!-- Add this new input field -->
+                        <div id="otherEducationField" class="mt-3 hidden">
+                            <input
+                                class="appearance-none border-[1.5px] border-gray-300 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-blue-200 focus:shadow-outline"
+                                type="text" id="otherEducationInput" placeholder="Please specify your education">
+                        </div>
+                    </div>
+                    <div class="mb-6 relative">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="state">State</label>
+                        <div class="relative">
+                            <select
+                                class="appearance-none border-[1.5px] border-gray-300 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-blue-200 focus:shadow-outline"
+                                id="state" required>
+                                <option value="">Select your state</option>
+                                <option value="Andhra Pradesh" name="states">Andhra Pradesh</option>
+                                <option value="Arunachal Pradesh" name="states">Arunachal Pradesh</option>
+                                <option value="Assam" name="states">Assam</option>
+                                <option value="Bihar" name="states">Bihar</option>
+                                <option value="Chhattisgarh" name="states">Chhattisgarh</option>
+                                <option value="Goa" name="states">Goa</option>
+                                <option value="Gujarat" name="states">Gujarat</option>
+                                <option value="Haryana" name="states">Haryana</option>
+                                <option value="Himachal Pradesh" name="states">Himachal Pradesh</option>
+                                <option value="Jharkhand" name="states">Jharkhand</option>
+                                <option value="Karnataka" name="states">Karnataka</option>
+                                <option value="Kerala" name="states">Kerala</option>
+                                <option value="Madhya Pradesh" name="states">Madhya Pradesh</option>
+                                <option value="Maharashtra" name="states">Maharashtra</option>
+                                <option value="Manipur" name="states">Manipur</option>
+                                <option value="Meghalaya" name="states">Meghalaya</option>
+                                <option value="Mizoram" name="states">Mizoram</option>
+                                <option value="Nagaland" name="states">Nagaland</option>
+                                <option value="Odisha" name="states">Odisha</option>
+                                <option value="Punjab" name="states">Punjab</option>
+                                <option value="Rajasthan" name="states">Rajasthan</option>
+                                <option value="Sikkim" name="states">Sikkim</option>
+                                <option value="Tamil Nadu" name="states">Tamil Nadu</option>
+                                <option value="Telangana" name="states">Telangana</option>
+                                <option value="Tripura" name="states">Tripura</option>
+                                <option value="Uttar Pradesh" name="states">Uttar Pradesh</option>
+                                <option value="Uttarakhand" name="states">Uttarakhand</option>
+                                <option value="West Bengal" name="states">West Bengal</option>
+                                <option value="Andaman and Nicobar Islands" name="states">Andaman and Nicobar Islands
+                                </option>
+                                <option value="Chandigarh" name="states">Chandigarh</option>
+                                <option value="Dadra and Nagar Haveli" name="states">Dadra and Nagar Haveli</option>
+                                <option value="Daman and Diu" name="states">Daman and Diu</option>
+                                <option value="Delhi" name="states">Delhi</option>
+                                <option value="Lakshadweep" name="states">Lakshadweep</option>
+                                <option value="Puducherry" name="states">Puducherry</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                <i class="fas fa-chevron-down text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <button type="submit"
+                            class="fancy-button text-white px-8 py-2 rounded-lg text-md font-semibold flex items-center justify-center">
+                            <span>Submit</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get all apply buttons
+        const applyButtons = document.querySelectorAll('button:not([type="submit"])');
+        const modal = document.getElementById('applicationModal');
+        const applicationForm = document.getElementById('applicationForm');
+
+        // Add click event to all apply buttons
+        applyButtons.forEach(button => {
+            if (button.textContent.toLowerCase().includes('apply')) {
+                button.addEventListener('click', openModal);
+            }
+        });
+
+        // Function to open modal
+        function openModal() {
+            modal.classList.remove('hidden');
+        }
+
+        // Function to close modal
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target.classList.contains('bg-opacity-50')) {
+                closeModal();
+            }
+        });
+
+        // Add this function to show toast notifications
+        function showToast(message, type = 'success') {
+            // Remove any existing toasts
+            const existingToast = document.querySelector('.toast');
+            if (existingToast) {
+                existingToast.remove();
+            }
+
+            // Create toast element
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+
+            // Create message and close button container
+            const content = document.createElement('div');
+            content.className = 'flex items-center';
+
+            // Add icon based on type
+            const icon = document.createElement('i');
+            icon.className = type === 'success' ? 'fas fa-check-circle mr-2' : 'fas fa-exclamation-circle mr-2';
+            content.appendChild(icon);
+
+            // Add message
+            const text = document.createElement('span');
+            text.textContent = message;
+            content.appendChild(text);
+
+            toast.appendChild(content);
+
+            // Add close button
+            const closeButton = document.createElement('button');
+            closeButton.className = 'ml-4 text-white hover:text-gray-200 focus:outline-none';
+            closeButton.innerHTML = '<i class="fas fa-times"></i>';
+            closeButton.onclick = () => toast.remove();
+            toast.appendChild(closeButton);
+
+            // Add toast to document
+            document.body.appendChild(toast);
+
+            // Remove toast after 3 seconds
+            setTimeout(() => {
+                if (toast && toast.parentElement) {
+                    toast.remove();
+                }
+            }, 3000);
+        }
+
+        // Update the form submission code
+        applicationForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const fullName = document.getElementById('fullName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const education = document.querySelector('input[name="education"]:checked').value;
+            const state = document.getElementById('state').value;
+
+            let finalEducation = education;
+            if (education === 'Other') {
+                finalEducation = document.getElementById('otherEducationInput').value;
+            }
+
+            // Create URL with parameters
+            const url = new URL('https://script.google.com/macros/s/AKfycbxN9iyAVKPhLtGhAQqLuH6HPtWy1FEoVDM5HKQ-tyThTGDzvNOxp6SsrZQFQwKmcCc/exec');
+            const params = new URLSearchParams({
+                name: fullName,
+                phone_no: phoneNumber,
+                education: finalEducation,
+                state: state,
+                websitePage: 'Landing Page',
+            });
+
+            try {
+                // Show loading state
+                const submitButton = applicationForm.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.innerHTML;
+                submitButton.innerHTML = '<span>Submitting...</span>';
+                submitButton.disabled = true;
+
+                // Send POST request
+                const response = await fetch(url, {
+                    method: 'POST',
+                    body: params,
+                    mode: 'no-cors'
+                });
+
+                // Show success toast instead of alert
+                showToast('Application submitted successfully! 🎉');
+
+                // Reset form
+                applicationForm.reset();
+
+                // Close modal
+                closeModal();
+
+            } catch (error) {
+                console.error('Error:', error);
+                // Show error toast instead of alert
+                showToast('There was an error submitting your application. Please try again.', 'error');
+            } finally {
+                // Restore button state
+                const submitButton = applicationForm.querySelector('button[type="submit"]');
+                submitButton.innerHTML = originalButtonText;
+                submitButton.disabled = false;
+            }
+        });
+
+        // Close modal on escape key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Add this new code for handling the "Other" education option
+        const otherRadio = document.getElementById('other');
+        const otherEducationField = document.getElementById('otherEducationField');
+        const otherEducationInput = document.getElementById('otherEducationInput');
+        const educationRadios = document.querySelectorAll('input[name="education"]');
+
+        educationRadios.forEach(radio => {
+            radio.addEventListener('change', function () {
+                if (otherRadio.checked) {
+                    otherEducationField.classList.remove('hidden');
+                    otherEducationInput.required = true;
+                } else {
+                    otherEducationField.classList.add('hidden');
+                    otherEducationInput.required = false;
+                    otherEducationInput.value = '';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
