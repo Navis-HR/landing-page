@@ -10,6 +10,26 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '512852125147985');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=512852125147985&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <style>
         body {
             background: linear-gradient(135deg, #faf5f5 0%, #e2c3c3 100%);
@@ -237,7 +257,8 @@
                 </p>
                 <div class="pt-4 flex flex-col sm:flex-row sm:items-center gap-4 justify-center">
                     <button
-                        class="fancy-button text-white px-16 py-4 rounded-lg text-lg font-semibold flex items-center justify-center">
+                        class="fancy-button text-white px-16 py-4 rounded-lg text-lg font-semibold flex items-center justify-center"
+                        id="applyNowButton">
                         <span>Apply Now</span>
                         <i class="fas fa-arrow-right ml-2"></i>
                     </button>
@@ -397,7 +418,8 @@
                         <p class="font-bold text-xl text-red-700 mb-6">💡 If this is you, NAVIS HR is your gateway to
                             success!</p>
                         <button
-                            class="fancy-button text-white px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center w-full sm:w-auto">
+                            class="fancy-button text-white px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center w-full sm:w-auto"
+                            id="applyNowButton">
                             <span>Apply Now & Start Your Journey!</span>
                             <i class="fas fa-arrow-right ml-2"></i>
                         </button>
@@ -496,7 +518,8 @@
                 </ul>
                 <div class="flex justify-center pt-4">
                     <button
-                        class="fancy-button text-white px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center">
+                        class="fancy-button text-white px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center"
+                        id="applyNowButton">
                         <span>Apply Now</span>
                         <i class="fas fa-arrow-right ml-2"></i>
                     </button>
@@ -1151,7 +1174,8 @@
 
         <div class="pt-4 flex flex-col sm:flex-row sm:items-center gap-4 justify-center">
             <button
-                class="fancy-button text-white px-16 py-4 rounded-lg text-lg font-semibold flex items-center justify-center">
+                class="fancy-button text-white px-16 py-4 rounded-lg text-lg font-semibold flex items-center justify-center"
+                id="applyNowButton">
                 <span>Apply Now</span>
             </button>
         </div>
@@ -1620,7 +1644,9 @@
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="phoneNumber">Phone Number</label>
                         <input
                             class="appearance-none border-[1.5px] border-gray-300 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-blue-200 focus:shadow-outline"
-                            id="phoneNumber" type="tel" placeholder="+91 Enter your phone number" required>
+                            id="phoneNumber" type="tel" placeholder="Enter your phone number" pattern="[0-9]{10}"
+                            maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            title="Please enter exactly 10 digits" required>
                     </div>
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2">Education</label>
@@ -1640,6 +1666,22 @@
                             <div class="flex items-center">
                                 <input type="radio" class="mr-2" name="education" value="Other" id="other">
                                 <label for="other">Other</label>
+                            </div>
+                        </div>
+                        <!-- ANM Years dropdown -->
+                        <div id="anmYearsField" class="hidden mt-4">
+                            <div class="relative">
+                                <select
+                                    class="appearance-none border-[1.5px] border-gray-300 w-full rounded py-3 px-2 text-gray-700 leading-tight focus:outline-blue-200 focus:shadow-outline"
+                                    id="anmYears" required>
+                                    <option value="">Select Year</option>
+                                    <option value="1 Year ANM Course">1 Year Course</option>
+                                    <option value="2 Year ANM Course">2 Year Course</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <i class="fas fa-chevron-down text-sm"></i>
+                                </div>
                             </div>
                         </div>
                         <!-- Add this new input field -->
@@ -1701,7 +1743,8 @@
                     </div>
                     <div class="flex items-center justify-center">
                         <button type="submit"
-                            class="fancy-button text-white px-8 py-2 rounded-lg text-md font-semibold flex items-center justify-center">
+                            class="fancy-button text-white px-8 py-2 rounded-lg text-md font-semibold flex items-center justify-center"
+                            id="submitButton">
                             <span>Submit</span>
                         </button>
                     </div>
@@ -1794,12 +1837,26 @@
             // Get form values
             const fullName = document.getElementById('fullName').value;
             const phoneNumber = document.getElementById('phoneNumber').value;
+
+            // Validate phone number
+            if (!/^\d{10}$/.test(phoneNumber)) {
+                showToast('Please enter exactly 10 digits for phone number', 'error');
+                return;
+            }
+
             const education = document.querySelector('input[name="education"]:checked').value;
             const state = document.getElementById('state').value;
 
             let finalEducation = education;
             if (education === 'Other') {
                 finalEducation = document.getElementById('otherEducationInput').value;
+            } else if (education === 'ANM') {
+                const anmYears = document.getElementById('anmYears').value;
+                if (!anmYears) {
+                    showToast('Please select ANM course duration', 'error');
+                    return;
+                }
+                finalEducation = anmYears;
             }
 
             // Create URL with parameters
@@ -1871,6 +1928,62 @@
                     otherEducationInput.value = '';
                 }
             });
+        });
+    </script>
+    <script>
+        document.getElementById('applyNowButton').addEventListener('click', function () {
+            fbq('track', 'Lead', {
+                content_name: 'Apply Now Button Click'
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function () {
+            fbq('track', 'CompleteRegistration', {
+                content_name: 'Submit Button Click'
+            });
+        });
+    </script>
+
+    <script>
+        // Get the ANM radio button and years dropdown
+        const anmRadio = document.getElementById('anm');
+        const anmYearsField = document.getElementById('anmYearsField');
+        const anmYearsSelect = document.getElementById('anmYears');
+
+        // Add event listeners to all education radio buttons
+        document.querySelectorAll('input[name="education"]').forEach(radio => {
+            radio.addEventListener('change', function () {
+                if (anmRadio.checked) {
+                    anmYearsField.classList.remove('hidden');
+                    anmYearsSelect.required = true;
+                } else {
+                    anmYearsField.classList.add('hidden');
+                    anmYearsSelect.required = false;
+                    anmYearsSelect.value = '';
+                }
+            });
+        });
+
+        // Update form submission to include ANM years
+        applicationForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const fullName = document.getElementById('fullName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const education = document.querySelector('input[name="education"]:checked').value;
+            const state = document.getElementById('state').value;
+
+            let finalEducation = education;
+            if (education === 'Other') {
+                finalEducation = document.getElementById('otherEducationInput').value;
+            } else if (education === 'ANM') {
+                const anmYears = document.getElementById('anmYears').value;
+                const years = document.getElementById('anmYears').value;
+                finalEducation = `ANM (${years} Year${years > 1 ? 's' : ''})`;
+            }
         });
     </script>
 </body>
