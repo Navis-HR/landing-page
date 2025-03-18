@@ -224,6 +224,26 @@
                 opacity: 0;
             }
         }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 12px 20px;
+            border-radius: 14px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            color: var(--text-dark);
+        }
+
+        .social-icon:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(37, 211, 102);
+            color: white;
+
+        }
     </style>
 </head>
 
@@ -1883,8 +1903,8 @@
                     mode: 'no-cors'
                 });
 
-                // Show success toast instead of alert
-                showToast('Application submitted successfully! 🎉');
+                // Show thank you modal instead of toast
+                openThankYouModal();
 
                 // Reset form
                 applicationForm.reset();
@@ -1894,8 +1914,7 @@
 
             } catch (error) {
                 console.error('Error:', error);
-                // Show error toast instead of alert
-                showToast('There was an error submitting your application. Please try again.', 'error');
+                // Handle error (optional)
             } finally {
                 // Restore button state
                 const submitButton = applicationForm.querySelector('button[type="submit"]');
@@ -1939,7 +1958,7 @@
     </script>
 
     <script>
-        document.getElementById('submitButton').addEventListener('click', function () {
+        document.getElementById('thankYouModal').addEventListener('click', function () {
             fbq('track', 'CompleteRegistration', {
                 content_name: 'Submit Button Click'
             });
@@ -1985,6 +2004,68 @@
                 finalEducation = `ANM (${years} Year${years > 1 ? 's' : ''})`;
             }
         });
+    </script>
+
+    <!-- Thank You Modal -->
+    <div id="thankYouModal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-50 transition-opacity"></div>
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full relative">
+                <h2 class="text-3xl font-bold text-center mb-6">Thank You!</h2>
+                <div>
+                    <h2 class="text-xl font-semibold text-center mb-6">
+                        Step 2: Join Our Exclusive Whatsapp Channel For Updates & More Fun Content
+                    </h2>
+                    <div class="flex flex-wrap gap-5 justify-center mb-6">
+                        <a href="https://whatsapp.com/channel/0029VajQTzg89ineidsAD90o"
+                            class="social-icon group bg-[#25D366]">
+                            <i class="fa-brands fa-whatsapp text-xl text-white group-hover:text-black"></i>
+                            <span class="ml-3 text-white group-hover:text-black">Whatsapp</span>
+                        </a>
+                    </div>
+                    <p class="text-center font-semibold">Your application has been submitted successfully. We will get
+                        back
+                        to you soon!
+                    </p>
+                    <div class="flex justify-center space-x-5 mt-4">
+                        <a href="https://www.facebook.com/NAVISHROFFICIAL/"
+                            class="bg-white/50 hover:bg-red-500 p-4 rounded-full transition-all duration-300 w-14 h-14 flex items-center justify-center transform hover:scale-110 hover:-translate-y-2 border border-gray-500 group">
+                            <i class="fab fa-facebook-f text-xl text-gray-700 group-hover:text-white"></i>
+                        </a>
+                        <a href="https://www.instagram.com/navishumanresources/"
+                            class="bg-white/50 hover:bg-red-500 p-4 rounded-full transition-all duration-300 w-14 h-14 flex items-center justify-center transform hover:scale-110 hover:-translate-y-2 border border-gray-500 group">
+                            <i class="fab fa-instagram text-xl text-gray-700 group-hover:text-white"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@navishumanresources"
+                            class="bg-white/50 hover:bg-red-500 p-4 rounded-full transition-all duration-300 w-14 h-14 flex items-center justify-center transform hover:scale-110 hover:-translate-y-2 border border-gray-500 group">
+                            <i class="fab fa-youtube text-xl text-gray-700 group-hover:text-white"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/navishumanresources/"
+                            class="bg-white/50 hover:bg-red-500 p-4 rounded-full transition-all duration-300 w-14 h-14 flex items-center justify-center transform hover:scale-110 hover:-translate-y-2 border border-gray-500 group">
+                            <i class="fab fa-linkedin-in text-xl text-gray-700 group-hover:text-white"></i>
+                        </a>
+                    </div>
+                    <div class="flex justify-center mt-6">
+                        <button onclick="closeThankYouModal()"
+                            class="fancy-button text-white px-8 py-2 rounded-lg text-md font-semibold">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Function to open thank you modal -->
+    <script>
+        function openThankYouModal() {
+            document.getElementById('thankYouModal').classList.remove('hidden');
+        }
+
+        // Function to close thank you modal
+        function closeThankYouModal() {
+            document.getElementById('thankYouModal').classList.add('hidden');
+        }
     </script>
 </body>
 
