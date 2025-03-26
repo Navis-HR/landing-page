@@ -1,0 +1,2104 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAVIS HR || CSR Program</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '512852125147985');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=512852125147985&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #faf5f5 0%, #e2c3c3 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .stats-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .animate-gradient {
+            background-size: 200% 200%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Updated fancy button styles from blue to red */
+        .fancy-button {
+            background: linear-gradient(135deg, #f24a4a 0%, #d02828 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(242, 74, 74, 0.4);
+        }
+
+        .fancy-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(242, 74, 74, 0.6);
+            background: linear-gradient(135deg, #d02828 0%, #b01616 100%);
+        }
+
+        .submit-button {
+            background: #25D366;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            background: #25D366;
+        }
+
+        .feature-card {
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .custom-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Updated title underline from blue to red gradient */
+        .title-underline::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #f24a4a, #e2c3c3);
+            margin-top: 0.5rem;
+        }
+
+        .img-hover-zoom {
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+
+        .img-hover-zoom img {
+            transition: transform 0.5s ease;
+        }
+
+        .img-hover-zoom:hover img {
+            transform: scale(1.05);
+        }
+
+        .custom-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 5fr 4fr;
+            }
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translate(0, 0px);
+            }
+
+            50% {
+                transform: translate(0, 15px);
+            }
+
+            100% {
+                transform: translate(0, 0px);
+            }
+        }
+
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+        }
+
+        /* Add these toast notification styles */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            color: white;
+            font-weight: 500;
+            min-width: 250px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            animation: slideIn 0.3s ease-in-out, fadeOut 0.5s ease-in-out 2.5s forwards;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .toast-success {
+            background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+        }
+
+        .toast-error {
+            background: linear-gradient(135deg, #f87171 0%, #dc2626 100%);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 12px 20px;
+            border-radius: 14px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            color: var(--text-dark);
+        }
+
+        .social-icon:hover {
+            background: var(--primary-color);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(37, 211, 102);
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+    <!-- Top Bar -->
+    <nav class="w-full z-50 bg-white/30 backdrop-blur-md sticky top-0 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <img class="h-12 w-auto transition-transform duration-300 hover:scale-105" src="./logo.png"
+                        alt="NAVIS HR" />
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1 -->
+    <section class="section-container overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <!-- Left Content-->
+            <div class="space-y-8" data-aos="fade-right">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight title-underline">
+                    Your Nursing Career in Japan Starts Here
+                    <span class="text-red-600">– High Salary, Growth & Stability Await You!</span>
+                </h1>
+                <button onclick="openModal()"
+                    class="flex md:justify-start justify-center hover:scale-105 transition-all duration-300">
+                    <div
+                        class="bg-[#25D366] flex text-white text-xl font-bold items-center px-4 py-2 mb-4 rounded-lg w-fit text-center">
+                        <h1>100% Sponsorship Available <br />Through CSR program!</h1>
+                    </div>
+                </button>
+                <p class="text-lg sm:text-xl text-gray-700 leading-relaxed">
+                    Secure a rewarding nursing career in Japan with a competitive salary, career advancement, and job
+                    stability.
+                    Get full visa support, complimentary language training, and guaranteed placement in leading
+                    hospitals.
+                </p>
+                <div class="pt-4 flex flex-col sm:flex-row sm:items-center gap-4 justify-center">
+                    <button
+                        class="fancy-button text-white px-16 py-4 rounded-lg text-lg font-semibold flex items-center justify-center"
+                        id="applyNowButton">
+                        <span>Apply Now</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Content-->
+            <div class="relative">
+                <div class="flex flex-col items-center">
+                    <div class="img-hover-zoom mb-6 w-full max-w-xl mx-auto h-auto rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.1)]"
+                        data-aos="fade-left">
+                        <img src="./nursing-career.jpg" alt="Nurse in Japan"
+                            class="w-full max-w-xl h-auto rounded-2xl " />
+                    </div>
+
+                    <div class="stats-grid w-full" data-aos="fade-left" data-aos-delay="300">
+                        <div class="stats-card p-4 rounded-xl text-center">
+                            <h2 class="text-2xl sm:text-3xl font-bold text-red-600 mb-2">23+</h2>
+                            <p class="text-gray-700 font-medium text-sm">Years of Experience</p>
+                        </div>
+
+                        <div class="stats-card p-4 rounded-xl text-center">
+                            <h2 class="text-2xl sm:text-3xl font-bold text-red-600 mb-2">1000+</h2>
+                            <p class="text-gray-700 font-medium text-sm">Candidates Placed</p>
+                        </div>
+
+                        <div class="stats-card p-4 rounded-xl text-center">
+                            <h2 class="text-2xl sm:text-3xl font-bold text-red-600 mb-2">99%</h2>
+                            <p class="text-gray-700 font-medium text-sm">Placement Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2-->
+    <section class="section-container overflow-hidden bg-white/30 backdrop-blur-md rounded-3xl custom-shadow">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Left content -->
+            <div class="relative overflow-hidden rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.1)]" data-aos="fade-right">
+                <div class="slider-container relative">
+                    <div class="slider">
+                        <img src="./IMG_8128.JPG" alt="Nurse in Japan"
+                            class="slide w-full max-w-2xl mx-auto h-auto object-contain">
+                        <img src="./IMG_8072.JPG" alt="Nursing Career"
+                            class="slide w-full max-w-2xl mx-auto h-auto object-contain">
+                        <img src="./IMG_8212.JPG" alt="Nursing Career"
+                            class="slide w-full max-w-2xl mx-auto h-auto object-contain">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Content -->
+            <div class="space-y-6" data-aos="fade-left">
+                <div class="space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight title-underline">
+                        How <span class="bg-[#ff0000] p-1 font-bold rounded-md 
+                        text-white">1000+ Nurses</span> Overcame These Challenges & Started Their Dream Careers in
+                        Japan
+                    </h2>
+                    <p class="font-bold text-xl text-red-600 mt-4">Don't worry—we've helped 1000+ nurses land their
+                        dream jobs in Japan, and you can be next!</p>
+                </div>
+                <div class="mt-6">
+                    <h4 class="font-bold text-xl mb-4 text-gray-800">What's Stopping You?</h4>
+                    <ul class="space-y-5 custom-list">
+                        <li class="flex items-start bg-white/50 p-4 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer"
+                            onclick="toggleCheckbox(this)">
+                            <input type="checkbox" class="w-8 h-8 mt-4 mr-3 accent-green-600 cursor-pointer"
+                                onclick="event.stopPropagation()">
+                            <div>
+                                <span class="font-semibold text-gray-900">Don't Speak Japanese?</span>
+                                <p class="text-gray-700 mt-1">No problem! We provide comprehensive language training so
+                                    you can communicate confidently in any healthcare setting.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start bg-white/50 p-4 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer"
+                            onclick="toggleCheckbox(this)">
+                            <input type="checkbox" class="w-6 h-6 mt-4 mr-3 accent-green-600 cursor-pointer"
+                                onclick="event.stopPropagation()">
+                            <div>
+                                <span class="font-semibold text-gray-900">Visa & Licensing Feels Complicated?</span>
+                                <p class="text-gray-700 mt-1">We handle all paperwork & approvals for you, making the
+                                    process smooth and stress-free!</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start bg-white/50 p-4 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer"
+                            onclick="toggleCheckbox(this)">
+                            <input type="checkbox" class="w-8 h-8 mt-4 mr-3 accent-green-600 cursor-pointer">
+                            <div>
+                                <span class="font-semibold text-gray-900">Struggling to Find the Right Job?</span>
+                                <p class="text-gray-700 mt-1">Our guaranteed job placement ensures you get hired in
+                                    reputed hospitals that value your skills and experience.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="mt-6 font-semibold text-red-700 text-lg">You'll earn <span class="bg-[#ff0000] p-1 font-bold rounded-md 
+                        text-white ">10X more</span>
+                        than local
+                        nursing jobs &
+                        secure your future in Japan!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="section-container overflow-hidden ">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Left Content -->
+            <div class="space-y-6 order-2 md:order-1" data-aos="fade-right">
+                <div class="space-y-2">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight title-underline">
+                        Is This for You? <span class=" text-green-500">Yes, If...</span>
+                    </h2>
+                </div>
+                <div class="bg-white/30 backdrop-blur-md p-6 rounded-2xl custom-shadow">
+                    <ul class="space-y-5 custom-list">
+                        <li class="flex items-center">
+                            <input type="checkbox" class="w-6 h-6 mt-1 mr-3 accent-green-600 cursor-pointer">
+                            <div>
+                                <p class="text-gray-800">
+                                    You're a <span class="font-semibold">B.Sc Nursing, ANM, or GNM graduate</span>
+                                    looking for a
+                                    <span class="font-semibold">high-paying, stable job in Japan.</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <input type="checkbox" class="w-5 h-5 mt-1 mr-3 accent-green-600 cursor-pointer">
+                            <div>
+                                <p class="text-gray-800">
+                                    You want <span class="font-semibold">10X higher salary</span> with <span
+                                        class="font-semibold">full visa & job placement support.</span>
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <input type="checkbox" class="w-5 h-5 mt-1 mr-3 accent-green-600 cursor-pointer">
+                            <div>
+                                <p class="text-gray-800">
+                                    You need <span class="font-semibold">Japanese language training</span> to work in
+                                    top hospitals.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <input type="checkbox" class="w-5 h-5 mt-1 mr-3 accent-green-600 cursor-pointer">
+                            <div>
+                                <p class="text-gray-800">
+                                    You seek <span class="font-semibold">career growth & long-term security</span> in a
+                                    respected profession.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <p class="font-bold text-xl text-red-700 mb-6">💡 If this is you, NAVIS HR is your gateway to
+                            success!</p>
+                        <button
+                            class="fancy-button text-white px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center w-full sm:w-auto"
+                            id="applyNowButton">
+                            <span>Apply Now & Start Your Journey!</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right content -->
+            <div class="relative overflow-hidden order-1 md:order-2 rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.1)]"
+                data-aos="fade-left">
+                <div class="absolute top-0 right-0 bg-red-600/80 text-white py-2 px-4 rounded-bl-lg rounded-tr-lg z-10">
+                    <span class="font-semibold">Qualified Nurses</span>
+                </div>
+                <div class="slider-container">
+                    <div class="slider">
+                        <img src="./IMG_2358.JPG" alt="Nurse in Japan"
+                            class="slide w-full max-w-xl mx-auto h-auto object-contain">
+                        <img src="./IMG_3655.JPG" alt="Qualified Nurses"
+                            class="slide w-full max-w-xl mx-auto h-auto object-contain">
+                        <img src="./IMG_4886.JPG" alt="Nursing Career"
+                            class="slide w-full max-w-xl mx-auto h-auto object-contain">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4 -->
+    <section class="section-container overflow-hidden bg-white/30 backdrop-blur-md rounded-3xl custom-shadow">
+        <div class="text-center mb-10" data-aos="fade-up">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                High-Paying Nursing Jobs in Japan
+            </h2>
+            <p class="text-xl text-red-600 font-semibold">Secure Your Future Today!</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Left content -->
+            <div>
+                <div class="relative overflow-hidden rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.1)] "
+                    data-aos="fade-right">
+                    <div
+                        class="absolute top-0 left-0 bg-gradient-to-r from-red-600 to-red-500 text-white py-2 px-4 rounded-br-lg rounded-tl-lg z-10 shadow-[0_0_25px_rgba(0,0,0,0.1)]">
+                        <span class="font-semibold">Success Stories</span>
+                    </div>
+                    <div class="img-hover-zoom relative ">
+
+                        <img src="./IMG-2024.JPG" alt="Nurse in Japan"
+                            class="w-full max-w-2xl mx-auto h-auto object-contain " />
+                    </div>
+
+                </div>
+                <div class="mt-6 text-center">
+                    <p class="font-bold text-xl text-red-700">Your Nursing Future Starts Here – Let NAVIS HR Guide You!
+                    </p>
+                </div>
+            </div>
+            <!-- Right Content -->
+            <div class="space-y-6 my-4" data-aos="fade-left">
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <li class="feature-card p-6 rounded-xl shadow-md col-span-1">
+                        <div
+                            class="mb-4 bg-red-100 w-14 h-14 rounded-full flex items-center justify-center text-red-600">
+                            <i class="fas fa-coins text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">High-Paying Jobs</h3>
+                        <p class="text-gray-700">Earn an attractive salary in Japan's top healthcare facilities with
+                            benefits.</p>
+                    </li>
+                    <li class="feature-card p-6 rounded-xl shadow-md col-span-1">
+                        <div
+                            class="mb-4 bg-green-100 w-14 h-14 rounded-full flex items-center justify-center text-green-600">
+                            <i class="fas fa-rocket text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">Fast-Track Placement</h3>
+                        <p class="text-gray-700">Secure your dream job quickly with our expert guidance and support.</p>
+                    </li>
+                    <li class="feature-card p-6 rounded-xl shadow-md col-span-1">
+                        <div
+                            class="mb-4 bg-pink-100 w-14 h-14 rounded-full flex items-center justify-center text-pink-600">
+                            <i class="fas fa-chart-line text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">Career Growth & Stability</h3>
+                        <p class="text-gray-700">Build a secure future in a globally respected profession with
+                            advancement.</p>
+                    </li>
+                    <li class="feature-card p-6 rounded-xl shadow-md col-span-1">
+                        <div
+                            class="mb-4 bg-orange-100 w-14 h-14 rounded-full flex items-center justify-center text-orange-600">
+                            <i class="fa-solid fa-hospital-user text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">Advanced Healthcare Exposure</h3>
+                        <p class="text-gray-700">Gain experience with cutting-edge medical technology and practices.
+                        </p>
+                    </li>
+                </ul>
+                <div class="flex justify-center pt-4">
+                    <button
+                        class="fancy-button text-white px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center"
+                        id="applyNowButton">
+                        <span>Apply Now</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-container overflow-hidden py-16">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h2 class="text-2xl sm:text-3xl lg:text-3xl font-bold text-gray-900 mb-4 ">
+                From dreams to reality—hear how Navis HR helped <br />nurses build their future in Japan!
+            </h2>
+            <p class="text-xl text-red-600 font-semibold">Nurses Trust Us—Here's Why!</p>
+            <div class="w-24 h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="relative px-4 md:px-12 mx-2">
+            <!-- Navigation Buttons - Improved visibility and positioning -->
+            <button
+                class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg text-red-600 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-red-400 md:-ml-6 h-12 w-12 flex items-center justify-center"
+                onclick="moveTestimonials('prev')">
+                <i class="fas fa-chevron-left text-xl"></i>
+            </button>
+            <button
+                class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg text-red-600 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-red-400 md:-mr-6 h-12 w-12 flex items-center justify-center"
+                onclick="moveTestimonials('next')">
+                <i class="fas fa-chevron-right text-xl"></i>
+            </button>
+
+            <!-- Testimonials Slider -->
+            <div class="testimonials-container overflow-hidden rounded-2xl ">
+                <div class="testimonials-slider flex transition-transform duration-500 ease-in-out">
+                    <!-- Testimonial 1 -->
+                    <div class="min-w-full px-1 sm:px-3 md:min-w-[50%] ">
+                        <div class="bg-gradient-to-br from-white to-red-50 p-6 md:p-8 rounded-xl h-full border border-red-100 shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex flex-col sm:flex-row items-center mb-6">
+                                <div class="relative mb-4 sm:mb-0 sm:mr-2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center text-xl font-bold border border-white shadow-md">
+                                        Y
+                                    </div>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-bold text-xl text-gray-900">Yuvika Jaiswal</h4>
+                                    <div class="mt-2 text-amber-400 flex justify-center sm:justify-start">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-left text-red-200 text-4xl absolute -top-2 -left-1 opacity-50"></i>
+                                <p class="text-gray-700 italic relative z-10 pl-4">No doubt it was an amazing journey 🙌
+                                    to success. I personally get to learn more about punctuality and multitasking
+                                    abilities while studying with our Japanese teachers. They all are really supportive
+                                    and cooperative. Talking more about the management, one of the best things was they
+                                    monitor each and every single piece of information so that the student won't get in
+                                    trouble. They played a very responsible role to ensure smoothness in every step.
+                                    There are so many things they've arranged whether it is related to accommodation or
+                                    traveling. Thank you so much for all your support that leads to the successful
+                                    journey. I am landing in Japan on 20th Jan 2025.Thank you Navis 😊
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="min-w-full px-1 sm:px-3 md:min-w-[50%] ">
+                        <div class="bg-gradient-to-br from-white to-red-50 p-6 md:p-8 rounded-xl h-full border border-red-100 shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                            data-aos="fade-up" data-aos-delay="200">
+                            <div class="flex flex-col sm:flex-row items-center mb-6">
+                                <div class="relative mb-4 sm:mb-0 sm:mr-2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl font-bold border border-white shadow-md">
+                                        S
+                                    </div>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-bold text-xl text-gray-900">Sunaina Raje</h4>
+                                    <div class="mt-2 text-amber-400 flex justify-center sm:justify-start">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-left text-red-200 text-4xl absolute -top-2 -left-1 opacity-50"></i>
+                                <p class="text-gray-700 italic relative z-10 pl-4">I had a great experience with Navis
+                                    the staff is very co-operative and welcoming they are very polite and humble and
+                                    their way of doing work Managing documents is very commendable the teachers are very
+                                    great. They are very hardworking and the teaching skills of the teachers are very
+                                    good they helped us a lot during our study Navis is a very promising company they
+                                    always help their students during the process of going to japan. They always make
+                                    their promises come true. My landing date is 20th Jan 2025.
+                                    Thank u Navis ❤️
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="min-w-full px-1 sm:px-3 md:min-w-[50%] ">
+                        <div class="bg-gradient-to-br from-white to-red-50 p-6 md:p-8 rounded-xl h-full border border-red-100 shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                            data-aos="fade-up" data-aos-delay="300">
+                            <div class="flex flex-col sm:flex-row items-center mb-6">
+                                <div class="relative mb-4 sm:mb-0 sm:mr-2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-green-600 text-white flex items-center justify-center text-xl font-bold border border-white shadow-md">
+                                        P
+                                    </div>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-bold text-xl text-gray-900">Priyanshu Mehta</h4>
+                                    <div class="mt-2 text-amber-400 flex justify-center sm:justify-start">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-left text-red-200 text-4xl absolute -top-2 -left-1 opacity-50"></i>
+                                <p class="text-gray-700 italic relative z-10 pl-4">Hey, My name is Priyanshu Mehta, I'm
+                                    from Uttarakhand. When I was studying my Nursing course our teachers told us about
+                                    the NAVIS company. They told us that the company is teaching Japanese and will give
+                                    you a chance to work in Japan. So i choose this opportunity. And i gave the
+                                    interview of NAVIS. The teachers of NAVIS is come to Uttarakhand form Banglore this
+                                    is very good. And the teachers are also very nice to teaching, Very Hard working,
+                                    Specially Simizu Mam is very Hard working. And after the 3 month study I passed in
+                                    1st attempt. But some students are not passed so the teacher are come to Uttarakhand
+                                    again to teach this is very good.
+                                    At the end my experience is very nice.
+                                    Thanks....
+                                    I'll be landing on Japan on 17th dec 2024.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="min-w-full px-1 sm:px-3 md:min-w-[50%] ">
+                        <div class="bg-gradient-to-br from-white to-red-50 p-6 md:p-8 rounded-xl h-full border border-red-100 shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex flex-col sm:flex-row items-center mb-6">
+                                <div class="relative mb-4 sm:mb-0 sm:mr-2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center text-xl font-bold border border-white shadow-md">
+                                        A
+                                    </div>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-bold text-xl text-gray-900">Anusha Anu</h4>
+                                    <div class="mt-2 text-amber-400 flex justify-center sm:justify-start">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-left text-red-200 text-4xl absolute -top-2 -left-1 opacity-50"></i>
+                                <p class="text-gray-700 italic relative z-10 pl-4">Navis HR in Bangalore is the best
+                                    place to learn japanese the professional yet friendly faculites helped me become
+                                    fluent in just six month and clear my exams effortlessly they also assisted with
+                                    placement in Japan and made my transition smooth by helping with travel
+                                    ,settling,and everything in between .highly recommend navis Hr for anyone pursuing a
+                                    career in Japan.i am exited about my travel because this is my first time and Am
+                                    landing in Japan on 27/01/2024. Thank you Navis😍
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="min-w-full px-1 sm:px-3 md:min-w-[50%] ">
+                        <div class="bg-gradient-to-br from-white to-red-50 p-6 md:p-8 rounded-xl h-full border border-red-100 shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex flex-col sm:flex-row items-center mb-6">
+                                <div class="relative mb-4 sm:mb-0 sm:mr-2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xl font-bold border border-white shadow-md">
+                                        S
+                                    </div>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-bold text-xl text-gray-900">Sathya D</h4>
+                                    <div class="mt-2 text-amber-400 flex justify-center sm:justify-start">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-left text-red-200 text-4xl absolute -top-2 -left-1 opacity-50"></i>
+                                <p class="text-gray-700 italic relative z-10 pl-4">When I first joined I was really
+                                    nervous and I didn't understand anything.But later on teacher helped me a lot and
+                                    teachers conducted special classes for me. It helped me a lot.I thank everyone in
+                                    navis who helped me understand about the Japanese language.my landing date is
+                                    February 17th 2025.Thank you navis for the wonderful opportunity for my Carrier.🥰
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 6 -->
+                    <div class="min-w-full px-1 sm:px-3 md:min-w-[50%] ">
+                        <div class="bg-gradient-to-br from-white to-red-50 p-6 md:p-8 rounded-xl h-full border border-red-100 shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex flex-col sm:flex-row items-center mb-6">
+                                <div class="relative mb-4 sm:mb-0 sm:mr-2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-pink-600 text-white flex items-center justify-center text-xl font-bold border border-white shadow-md">
+                                        V
+                                    </div>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-bold text-xl text-gray-900">Verona Christie Syngkli</h4>
+                                    <div class="mt-2 text-amber-400 flex justify-center sm:justify-start">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-left text-red-200 text-4xl absolute -top-2 -left-1 opacity-50"></i>
+                                <p class="text-gray-700 italic relative z-10 pl-4">I'm thoroughly impressed with their
+                                    Japanese language program. The instructors are native speakers, extremely patient,
+                                    and knowledgeable.The faculty and staff are extremely knowledgeable, supportive, and
+                                    passionate about teaching. The curriculum is well-structured and industry-relevant.
+                                    Soon I'll start working as my landing date is 26/11/2024.. Thank you Navis.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 7 -->
+                    <div class="min-w-full px-1 sm:px-3 md:min-w-[50%] ">
+                        <div class="bg-gradient-to-br from-white to-red-50 p-6 md:p-8 rounded-xl h-full border border-red-100 shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex flex-col sm:flex-row items-center mb-6">
+                                <div class="relative mb-4 sm:mb-0 sm:mr-2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-yellow-600 text-white flex items-center justify-center text-xl font-bold border border-white shadow-md">
+                                        N
+                                    </div>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-bold text-xl text-gray-900">Nithisha CM</h4>
+                                    <div class="mt-2 text-amber-400 flex justify-center sm:justify-start">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-left text-red-200 text-4xl absolute -top-2 -left-1 opacity-50"></i>
+                                <p class="text-gray-700 italic relative z-10 pl-4">Navis HR in Bangalore is the best
+                                    place to study Japanese.Everyone is so friendly here. I got full support from my
+                                    trainers and the management during my stay at Navis.I will be travelling to Japan on
+                                    25th February,2025. I am very happy ❤️ Thanks to Navis HR
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 8 -->
+                    <div class="min-w-full px-1 sm:px-3 md:min-w-[50%] ">
+                        <div class="bg-gradient-to-br from-white to-red-50 p-6 md:p-8 rounded-xl h-full border border-red-100 shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex flex-col sm:flex-row items-center mb-6">
+                                <div class="relative mb-4 sm:mb-0 sm:mr-2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-teal-600 text-white flex items-center justify-center text-xl font-bold border border-white shadow-md">
+                                        S
+                                    </div>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-bold text-xl text-gray-900">Shivani Keith</h4>
+                                    <div class="mt-2 text-amber-400 flex justify-center sm:justify-start">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-left text-red-200 text-4xl absolute -top-2 -left-1 opacity-50"></i>
+                                <p class="text-gray-700 italic relative z-10 pl-4">It was great experience studying
+                                    here. All staff are very supporting they make easy to progress in language
+                                    interactive lessons. All teachers are very energetic and helpful. And 10th of
+                                    February 2025 I'm travelling to Japan.❤️
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 9 -->
+                    <div class="min-w-full px-1 sm:px-3 md:min-w-[50%] ">
+                        <div class="bg-gradient-to-br from-white to-red-50 p-6 md:p-8 rounded-xl h-full border border-red-100 shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex flex-col sm:flex-row items-center mb-6">
+                                <div class="relative mb-4 sm:mb-0 sm:mr-2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-orange-600 text-white flex items-center justify-center text-xl font-bold border border-white shadow-md">
+                                        P
+                                    </div>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-bold text-xl text-gray-900">Priya Bhandari</h4>
+                                    <div class="mt-2 text-amber-400 flex justify-center sm:justify-start">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-left text-red-200 text-4xl absolute -top-2 -left-1 opacity-50"></i>
+                                <p class="text-gray-700 italic relative z-10 pl-4">Navis HR in Bangalore is the best
+                                    place to learn language Navis provided an excellent learning experience with highly
+                                    qualified and dedicated teachers who created a supportive and engaging environment,
+                                    making it easy to progress in the language with interactive lessons, diverse
+                                    learning materials, and ample practice opportunities and specially Shimizu sense
+                                    (teacher) she makes the class more interactive and help me alot in my difficulties
+                                    while learning the japanese language .
+                                    And on 10th of February 2025 I am traveling to Japan so I am very thankful to navis
+                                    for this great opportunity.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 10 -->
+                    <div class="min-w-full px-1 sm:px-3 md:min-w-[50%] ">
+                        <div class="bg-gradient-to-br from-white to-red-50 p-6 md:p-8 rounded-xl h-full border border-red-100 shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex flex-col sm:flex-row items-center mb-6">
+                                <div class="relative mb-4 sm:mb-0 sm:mr-2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-cyan-600 text-white flex items-center justify-center text-xl font-bold border border-white shadow-md">
+                                        R
+                                    </div>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-bold text-xl text-gray-900">rahul rana</h4>
+                                    <div class="mt-2 text-amber-400 flex justify-center sm:justify-start">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-left text-red-200 text-4xl absolute -top-2 -left-1 opacity-50"></i>
+                                <p class="text-gray-700 italic relative z-10 pl-4">It was a great experience studying
+                                    here. The teachers are very supportive, very inspiring and I learn lot of things
+                                    like puncuality, dedication towards the work and many more. And the last thing I
+                                    want to say that navis team is very coperative and always there to clear our doubt
+                                    and support us throughout the whole journey..
+                                    5th Feb I'll be landing in Japan.
+                                    Thank you Navis.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 11 -->
+                    <div class="min-w-full px-1 sm:px-3 md:min-w-[50%] ">
+                        <div class="bg-gradient-to-br from-white to-red-50 p-6 md:p-8 rounded-xl h-full border border-red-100 shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex flex-col sm:flex-row items-center mb-6">
+                                <div class="relative mb-4 sm:mb-0 sm:mr-2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xl font-bold border border-white shadow-md">
+                                        B
+                                    </div>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-bold text-xl text-gray-900">Banyllaa Risaw</h4>
+                                    <div class="mt-2 text-amber-400 flex justify-center sm:justify-start">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-left text-red-200 text-4xl absolute -top-2 -left-1 opacity-50"></i>
+                                <p class="text-gray-700 italic relative z-10 pl-4">I Banylla from Meghalaya.I would like
+                                    to thanks Navis Hr. for giving us this opportunity to study Japanese language,
+                                    learning Japanese it's very hard and take alots of effort and thanks to all the
+                                    teacher and navis HR for their support. I will be landing on 6/01/25 in Japan.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 12 -->
+                    <div class="min-w-full px-1 sm:px-3 md:min-w-[50%] ">
+                        <div class="bg-gradient-to-br from-white to-red-50 p-6 md:p-8 rounded-xl h-full border border-red-100 shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex flex-col sm:flex-row items-center mb-6">
+                                <div class="relative mb-4 sm:mb-0 sm:mr-2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-violet-600 text-white flex items-center justify-center text-xl font-bold border border-white shadow-md">
+                                        A
+                                    </div>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-bold text-xl text-gray-900">Alvarine Shylla</h4>
+                                    <div class="mt-2 text-amber-400 flex justify-center sm:justify-start">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-left text-red-200 text-4xl absolute -top-2 -left-1 opacity-50"></i>
+                                <p class="text-gray-700 italic relative z-10 pl-4">I'm Alvarine from Meghalaya ,i
+                                    completed my Japanese language from Navis HR, according to my experience Japanese
+                                    teacher are very kind ,gentle , supporting,and hard working even though the language
+                                    is difficult but by there help I'm able to passed the exam.
+                                    I also thank all the staff for there hard work and support.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 13 -->
+                    <div class="min-w-full px-1 sm:px-3 md:min-w-[50%] ">
+                        <div class="bg-gradient-to-br from-white to-red-50 p-6 md:p-8 rounded-xl h-full border border-red-100 shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex flex-col sm:flex-row items-center mb-6">
+                                <div class="relative mb-4 sm:mb-0 sm:mr-2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-rose-600 text-white flex items-center justify-center text-xl font-bold border border-white shadow-md">
+                                        L
+                                    </div>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-bold text-xl text-gray-900">LILY HANGSHING</h4>
+                                    <div class="mt-2 text-amber-400 flex justify-center sm:justify-start">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-left text-red-200 text-4xl absolute -top-2 -left-1 opacity-50"></i>
+                                <p class="text-gray-700 italic relative z-10 pl-4">The teachers are incredibly patient
+                                    and create a welcoming environment, making learning Japanese feel accessible even
+                                    for beginners," "The curriculum is well-structured and effectively balances,grammar,
+                                    vocabulary, and conversation practice," "I've seen significant progress in my
+                                    Japanese skills thanks to the immersive teaching methods and engaging activities,"
+                                    "The staff is very supportive and always available to answer questions, even outside
+                                    of class," And also Thank to all the non teaching staff for their work and effort
+                                    for the student.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 14 -->
+                    <div class="min-w-full px-1 sm:px-3 md:min-w-[50%] ">
+                        <div class="bg-gradient-to-br from-white to-red-50 p-6 md:p-8 rounded-xl h-full border border-red-100 shadow-md transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                            data-aos="fade-up" data-aos-delay="100">
+                            <div class="flex flex-col sm:flex-row items-center mb-6">
+                                <div class="relative mb-4 sm:mb-0 sm:mr-2">
+                                    <div
+                                        class="w-12 h-12 rounded-full bg-fuchsia-600 text-white flex items-center justify-center text-xl font-bold border border-white shadow-md">
+                                        R
+                                    </div>
+                                </div>
+                                <div class="text-center sm:text-left">
+                                    <h4 class="font-bold text-xl text-gray-900">Boopu Revathy20</h4>
+                                    <div class="mt-2 text-amber-400 flex justify-center sm:justify-start">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-left text-red-200 text-4xl absolute -top-2 -left-1 opacity-50"></i>
+                                <p class="text-gray-700 italic relative z-10 pl-4">I'm Revathy sreeja Johnson, I'm from
+                                    kanyakumari, I know about navis from my college seminar when I joined in navis it's
+                                    really helpful for learning my skills and Japanese language also my teachers always
+                                    motives me to study and how to live in Japan and their culture so I'm so blessed to
+                                    studying in navis and finally I'm going to Japan December 9th .
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dots Navigation -->
+            <div class="flex justify-center mt-8 gap-3" id="testimonial-dots">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Video Section -->
+    <section class="section-container overflow-hidden bg-white/30 backdrop-blur-md rounded-3xl custom-shadow mb-6">
+        <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-3xl md:text-4xl lg:text-3xl font-bold text-gray-900 mb-4">
+                Success in Their Own Words – Watch Their Journey!
+            </h2>
+            <p class="text-xl text-red-600 font-semibold">Success Speaks!</p>
+            <div class="w-24 h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Video Slider Container -->
+        <div class="relative px-4 md:px-12">
+            <button id="prev-btn"
+                class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 md:p-3 shadow-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-gray-700" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+
+            <button id="next-btn"
+                class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 md:p-3 shadow-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-gray-700" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+
+            <!-- Video Slider -->
+            <div class="overflow-hidden">
+                <div id="video-slider" class="flex transition-transform duration-500 ease-in-out ">
+
+                    <!-- Video 1 -->
+                    <div
+                        class="video-slide min-w-full sm:min-w-[85%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl bg-white">
+                        <div class="relative pb-[56.25%] h-0">
+                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/Sd1wFB1WRnk?rel=0" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Video 2 -->
+                    <div
+                        class="video-slide min-w-full sm:min-w-[85%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl bg-white">
+                        <div class="relative pb-[56.25%] h-0">
+                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/MoHsRBWtS7o?rel=0" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Video 3 -->
+                    <div
+                        class="video-slide min-w-full sm:min-w-[85%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl bg-white">
+                        <div class="relative pb-[56.25%] h-0">
+                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/1vYvYM2qAJk?rel=0" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Video 4 -->
+                    <div
+                        class="video-slide min-w-full sm:min-w-[85%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl bg-white">
+                        <div class="relative pb-[56.25%] h-0">
+                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/-O9I1N7CoFg?rel=0" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Video 5 -->
+                    <div
+                        class="video-slide min-w-full sm:min-w-[85%] md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.333%-16px)] rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-xl bg-white">
+                        <div class="relative pb-[56.25%] h-0">
+                            <iframe class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/ikDQY_nZ6JE?rel=0" frameborder="0"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dots Navigation -->
+        <div id="dots-container" class="flex justify-center mt-8 space-x-2">
+            <!-- Dots will be generated by JavaScript -->
+        </div>
+
+        <div class="pt-4 flex flex-col sm:flex-row sm:items-center gap-4 justify-center">
+            <button
+                class="fancy-button text-white px-16 py-4 rounded-lg text-lg font-semibold flex items-center justify-center"
+                id="applyNowButton">
+                <span>Apply Now</span>
+            </button>
+        </div>
+    </section>
+
+    <div class="bg-red-700">
+        <div class="max-w-full mx-auto px-4 py-2 flex flex-col sm:flex-row justify-between items-center">
+            <p class="text-white text-base mb-2 sm:mb-0">
+                Designed and Developed by <span class="font-semibold">NAVIS HR</span>
+            </p>
+            <p class="text-white text-base">
+                © 2025 NAVIS HR. All Rights Reserved.
+            </p>
+        </div>
+    </div>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            mirror: false,
+            offset: 120
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Auto Slider functionality
+        const sliders = document.querySelectorAll('.slider');
+        const slidesArrays = Array.from(sliders).map(slider => slider.querySelectorAll('.slide'));
+        let currentSlides = Array(sliders.length).fill(0);
+
+        function nextSlide(sliderIndex) {
+            const slider = sliders[sliderIndex];
+            const slides = slidesArrays[sliderIndex];
+            currentSlides[sliderIndex] = (currentSlides[sliderIndex] + 1) % slides.length;
+            slider.style.transform = `translateX(-${currentSlides[sliderIndex] * 100}%)`;
+        }
+
+        // Change slides every 3 seconds for all sliders
+        sliders.forEach((_, index) => {
+            setInterval(() => nextSlide(index), 3000);
+        });
+
+        // Update the testimonials related code
+        const testimonialSlider = document.querySelector('.testimonials-slider');
+        const testimonialCards = document.querySelectorAll('.testimonials-slider > div');
+        const dotsContainer = document.getElementById('testimonial-dots');
+        let currentTestimonialIndex = 0;
+        let slidesToShow = 1; // Default for mobile
+
+        // Create dots based on number of testimonial cards
+        function createDots() {
+            dotsContainer.innerHTML = ''; // Clear existing dots
+            const totalSlides = Math.ceil(testimonialCards.length / slidesToShow);
+
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.className = `h-3 w-3 rounded-full transition-all duration-300 ${i === 0 ? 'bg-red-600 scale-125' : 'bg-red-300'} testimonial-dot`;
+                dot.setAttribute('data-index', i);
+                dot.addEventListener('click', () => {
+                    currentTestimonialIndex = i;
+                    updateTestimonialPosition();
+                });
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        // Update slidesToShow based on screen width
+        function updateSlidesToShow() {
+            if (window.innerWidth >= 1024) {
+                slidesToShow = 2; // Desktop
+            } else if (window.innerWidth >= 768) {
+                slidesToShow = 2; // Tablet
+            } else {
+                slidesToShow = 1; // Mobile
+            }
+            createDots();
+            updateTestimonialPosition();
+        }
+
+        // Call this function when the page loads and on resize
+        window.addEventListener('load', updateSlidesToShow);
+        window.addEventListener('resize', updateSlidesToShow);
+
+        function updateTestimonialPosition() {
+            const testimonialDots = document.querySelectorAll('.testimonial-dot');
+            // Calculate percentage to move slider
+            const percentage = (currentTestimonialIndex * -100);
+
+            // Apply transform and handle responsiveness
+            testimonialSlider.style.transform = `translateX(${percentage}%)`;
+
+            // Update dots
+            testimonialDots.forEach((dot, index) => {
+                if (index === currentTestimonialIndex) {
+                    dot.classList.add('bg-red-600', 'scale-125');
+                    dot.classList.remove('bg-red-300');
+                } else {
+                    dot.classList.add('bg-red-300');
+                    dot.classList.remove('bg-red-600', 'scale-125');
+                }
+            });
+        }
+
+        function moveTestimonials(direction) {
+            const testimonialDots = document.querySelectorAll('.testimonial-dot');
+            const totalDots = testimonialDots.length;
+
+            if (direction === 'next') {
+                currentTestimonialIndex = (currentTestimonialIndex + 1) % totalDots;
+            } else {
+                currentTestimonialIndex = (currentTestimonialIndex - 1 + totalDots) % totalDots;
+            }
+            updateTestimonialPosition();
+        }
+
+        // Swipe functionality for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const testimonialContainer = document.querySelector('.testimonials-container');
+
+        testimonialContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        testimonialContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                // Swipe left
+                moveTestimonials('next');
+            } else if (touchEndX > touchStartX + 50) {
+                // Swipe right
+                moveTestimonials('prev');
+            }
+        }
+
+        // Auto-advance testimonials every 5 seconds
+        let testimonialInterval = setInterval(() => moveTestimonials('next'), 3000);
+
+        // Pause auto-advance on hover
+        testimonialContainer.addEventListener('mouseenter', () => {
+            clearInterval(testimonialInterval);
+        });
+
+        testimonialContainer.addEventListener('mouseleave', () => {
+            testimonialInterval = setInterval(() => moveTestimonials('next'), 3000);
+        });
+
+        // Add the AOS initialization
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                mirror: false,
+                offset: 120
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Elements
+            const slider = document.getElementById('video-slider');
+            const originalSlides = document.querySelectorAll('.video-slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const dotsContainer = document.getElementById('dots-container');
+
+            // Clone slides for infinite loop
+            const slidesToClone = [...originalSlides].map(slide => slide.cloneNode(true));
+            slidesToClone.forEach(slide => slider.appendChild(slide));
+
+            // Variables
+            let currentIndex = 0;
+            let slideWidth = 0;
+            let gap = 16; // Default gap
+            let slidesPerView = getItemsPerView();
+            let totalSlides = originalSlides.length;
+            let isTransitioning = false;
+            let autoplayInterval;
+
+            // Create dot indicators
+            function createDots() {
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < totalSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('w-3', 'h-3', 'rounded-full', 'transition-colors', 'duration-200', 'focus:outline-none');
+                    dot.setAttribute('data-index', i);
+                    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+
+                    if (i === currentIndex % totalSlides) {
+                        dot.classList.add('bg-red-600');
+                    } else {
+                        dot.classList.add('bg-gray-300', 'hover:bg-red-400');
+                    }
+
+                    dot.addEventListener('click', () => {
+                        goToSlide(i);
+                    });
+
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            // Calculate items per view based on screen width
+            function getItemsPerView() {
+                if (window.innerWidth >= 1024) return 3;
+                if (window.innerWidth >= 768) return 2;
+                if (window.innerWidth >= 640) return 1.15; // Show a peek of next slide on small screens
+                return 1;
+            }
+
+            // Calculate dimensions
+            function calculateDimensions() {
+                const containerWidth = slider.parentElement.clientWidth;
+                slidesPerView = getItemsPerView();
+
+                if (slidesPerView === 3) {
+                    gap = 16; // Larger gap for desktop
+                    slideWidth = (containerWidth - (gap * 2)) / 3;
+                } else if (slidesPerView === 2) {
+                    gap = 12; // Medium gap for tablets
+                    slideWidth = (containerWidth - gap) / 2;
+                } else if (slidesPerView === 1.15) {
+                    gap = 10; // Small gap for small screens with peek
+                    slideWidth = containerWidth / 1.15 - gap;
+                } else {
+                    gap = 0; // No gap for extra small screens
+                    slideWidth = containerWidth;
+                }
+
+                // Update slide widths
+                document.querySelectorAll('.video-slide').forEach(slide => {
+                    slide.style.minWidth = `${slideWidth}px`;
+                    slide.style.marginRight = `${gap}px`;
+                });
+
+                // Force immediate update of slider position
+                updateSlider(true);
+            }
+
+            // Update slider position
+            function updateSlider(immediate = false) {
+                const offset = -(currentIndex * (slideWidth + gap));
+
+                if (immediate) {
+                    slider.style.transition = 'none';
+                    slider.style.transform = `translateX(${offset}px)`;
+                    // Force reflow
+                    slider.offsetHeight;
+                    slider.style.transition = 'transform 500ms ease';
+                } else {
+                    slider.style.transform = `translateX(${offset}px)`;
+                }
+
+                // Update dots
+                const dots = dotsContainer.querySelectorAll('button');
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex % totalSlides) {
+                        dot.classList.remove('bg-gray-300', 'hover:bg-red-400');
+                        dot.classList.add('bg-red-600');
+                    } else {
+                        dot.classList.remove('bg-red-600');
+                        dot.classList.add('bg-gray-300', 'hover:bg-red-400');
+                    }
+                });
+            }
+
+            // Go to specific slide
+            function goToSlide(index) {
+                currentIndex = index;
+                updateSlider();
+            }
+
+            // Handle infinite loop logic
+            function handleInfiniteLoop() {
+                if (currentIndex >= totalSlides) {
+                    // We've gone past the end, jump to the beginning (clone)
+                    setTimeout(() => {
+                        currentIndex = 0;
+                        updateSlider(true);
+                        isTransitioning = false;
+                    }, 500); // Match this to your transition duration
+                } else if (currentIndex < 0) {
+                    // We've gone before the beginning, jump to the end (clone)
+                    setTimeout(() => {
+                        currentIndex = totalSlides - 1;
+                        updateSlider(true);
+                        isTransitioning = false;
+                    }, 500);
+                } else {
+                    isTransitioning = false;
+                }
+            }
+
+            // Navigation
+            prevBtn.addEventListener('click', () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIndex--;
+                updateSlider();
+                handleInfiniteLoop();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIndex++;
+                updateSlider();
+                handleInfiniteLoop();
+            });
+
+            // Autoplay functionality
+            function startAutoplay() {
+                autoplayInterval = setInterval(() => {
+                    if (!isTransitioning) {
+                        isTransitioning = true;
+                        currentIndex++;
+                        updateSlider();
+                        handleInfiniteLoop();
+                    }
+                }, 3000); // Change slides every 5 seconds
+            }
+
+            function stopAutoplay() {
+                clearInterval(autoplayInterval);
+            }
+
+            // Touch events for mobile swiping
+            let touchStartX = 0;
+            let touchMoveX = 0;
+            let isDragging = false;
+
+            slider.addEventListener('touchstart', e => {
+                touchStartX = e.touches[0].clientX;
+                isDragging = true;
+                stopAutoplay();
+            }, { passive: true });
+
+            slider.addEventListener('touchmove', e => {
+                if (!isDragging) return;
+                touchMoveX = e.touches[0].clientX;
+                const diffX = touchStartX - touchMoveX;
+
+                // Add resistance at the edges
+                if ((currentIndex === 0 && diffX < 0) || (currentIndex === totalSlides * 2 - 1 && diffX > 0)) {
+                    slider.style.transform = `translateX(${-(currentIndex * (slideWidth + gap)) - (diffX / 2.5)}px)`;
+                } else {
+                    slider.style.transform = `translateX(${-(currentIndex * (slideWidth + gap)) - diffX}px)`;
+                }
+            }, { passive: true });
+
+            slider.addEventListener('touchend', e => {
+                if (!isDragging) return;
+
+                const diffX = touchStartX - touchMoveX;
+                const threshold = slideWidth / 3; // Need to drag at least 1/3 of slide width
+
+                if (Math.abs(diffX) > threshold) {
+                    if (diffX > 0) {
+                        // Swipe left - go next
+                        if (!isTransitioning) {
+                            isTransitioning = true;
+                            currentIndex++;
+                            updateSlider();
+                            handleInfiniteLoop();
+                        }
+                    } else {
+                        // Swipe right - go prev
+                        if (!isTransitioning) {
+                            isTransitioning = true;
+                            currentIndex--;
+                            updateSlider();
+                            handleInfiniteLoop();
+                        }
+                    }
+                } else {
+                    // Return to original position
+                    updateSlider();
+                }
+
+                isDragging = false;
+                startAutoplay();
+            }, { passive: true });
+
+            // Pause autoplay on hover/focus
+            slider.addEventListener('mouseenter', stopAutoplay);
+            slider.addEventListener('mouseleave', startAutoplay);
+            prevBtn.addEventListener('focus', stopAutoplay);
+            prevBtn.addEventListener('blur', startAutoplay);
+            nextBtn.addEventListener('focus', stopAutoplay);
+            nextBtn.addEventListener('blur', startAutoplay);
+
+            // Transition end event to remove transition when needed
+            slider.addEventListener('transitionend', () => {
+                if (currentIndex >= totalSlides || currentIndex < 0) {
+                    handleInfiniteLoop();
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                calculateDimensions();
+            });
+
+            // Initialize
+            calculateDimensions();
+            createDots();
+            startAutoplay();
+
+            // Preload next slide images on smaller screens for smoother scrolling
+            if (window.innerWidth < 768) {
+                const preloadNextSlides = () => {
+                    const nextIndex = (currentIndex + 1) % (originalSlides.length * 2);
+                    const nextSlide = document.querySelectorAll('.video-slide')[nextIndex];
+                    if (nextSlide) {
+                        const iframe = nextSlide.querySelector('iframe');
+                        if (iframe && !iframe.src) {
+                            iframe.src = iframe.getAttribute('data-src');
+                        }
+                    }
+                };
+
+                preloadNextSlides();
+                slider.addEventListener('transitionend', preloadNextSlides);
+            }
+        });
+    </script>
+
+
+    <!-- Form Modal -->
+    <div id="applicationModal" class="fixed inset-0 z-50 hidden">
+        <!-- Modal backdrop -->
+        <div class="absolute inset-0 bg-black bg-opacity-50 transition-opacity"></div>
+
+        <!-- Modal content -->
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full relative">
+                <!-- Close button -->
+                <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+
+                <h2 class="text-2xl font-semibold text-center mb-6 uppercase">Apply for Japan Job Opportunity</h2>
+                <p class="text-sm bg-[#00d9ff] font-semibold p-2 w-[48%] mb-4 rounded-md">
+                    Role : Care Taker Nursing</p>
+                <form id="applicationForm">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="fullName">Full Name</label>
+                        <input
+                            class="appearance-none border-[1.5px] border-gray-300 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-blue-200 focus:shadow-outline"
+                            id="fullName" type="text" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="phoneNumber">Phone Number</label>
+                        <input
+                            class="appearance-none border-[1.5px] border-gray-300 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-blue-200 focus:shadow-outline"
+                            id="phoneNumber" type="tel" placeholder="Enter your phone number" pattern="[0-9]{10}"
+                            maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                            title="Please enter exactly 10 digits" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Education</label>
+                        <div class="flex flex-wrap items-center gap-4">
+                            <div class="flex items-center">
+                                <input type="radio" class="mr-2" name="education" value="ANM" id="anm" required>
+                                <label for="anm">ANM</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" class="mr-2" name="education" value="GNM" id="gnm">
+                                <label for="gnm">GNM</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" class="mr-2" name="education" value="BSc Nursing" id="bsc">
+                                <label for="bsc">BSc (Nursing)</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="radio" class="mr-2" name="education" value="Other" id="other">
+                                <label for="other">Other</label>
+                            </div>
+                        </div>
+                        <!-- ANM Years dropdown -->
+                        <div id="anmYearsField" class="hidden mt-4">
+                            <div class="relative">
+                                <select
+                                    class="appearance-none border-[1.5px] border-gray-300 w-full rounded py-3 px-2 text-gray-700 leading-tight focus:outline-blue-200 focus:shadow-outline"
+                                    id="anmYears" required>
+                                    <option value="">Select Year</option>
+                                    <option value="1 Year ANM Course">1 Year Course</option>
+                                    <option value="2 Year ANM Course">2 Year Course</option>
+                                </select>
+                                <div
+                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <i class="fas fa-chevron-down text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add this new input field -->
+                        <div id="otherEducationField" class="mt-3 hidden">
+                            <input
+                                class="appearance-none border-[1.5px] border-gray-300 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-blue-200 focus:shadow-outline"
+                                type="text" id="otherEducationInput" placeholder="Please specify your education">
+                        </div>
+                    </div>
+                    <div class="mb-6 relative">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="state">State</label>
+                        <div class="relative">
+                            <select
+                                class="appearance-none border-[1.5px] border-gray-300 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-blue-200 focus:shadow-outline"
+                                id="state" required>
+                                <option value="">Select your state</option>
+                                <option value="Andhra Pradesh" name="states">Andhra Pradesh</option>
+                                <option value="Arunachal Pradesh" name="states">Arunachal Pradesh</option>
+                                <option value="Assam" name="states">Assam</option>
+                                <option value="Bihar" name="states">Bihar</option>
+                                <option value="Chhattisgarh" name="states">Chhattisgarh</option>
+                                <option value="Goa" name="states">Goa</option>
+                                <option value="Gujarat" name="states">Gujarat</option>
+                                <option value="Haryana" name="states">Haryana</option>
+                                <option value="Himachal Pradesh" name="states">Himachal Pradesh</option>
+                                <option value="Jharkhand" name="states">Jharkhand</option>
+                                <option value="Karnataka" name="states">Karnataka</option>
+                                <option value="Kerala" name="states">Kerala</option>
+                                <option value="Madhya Pradesh" name="states">Madhya Pradesh</option>
+                                <option value="Maharashtra" name="states">Maharashtra</option>
+                                <option value="Manipur" name="states">Manipur</option>
+                                <option value="Meghalaya" name="states">Meghalaya</option>
+                                <option value="Mizoram" name="states">Mizoram</option>
+                                <option value="Nagaland" name="states">Nagaland</option>
+                                <option value="Odisha" name="states">Odisha</option>
+                                <option value="Punjab" name="states">Punjab</option>
+                                <option value="Rajasthan" name="states">Rajasthan</option>
+                                <option value="Sikkim" name="states">Sikkim</option>
+                                <option value="Tamil Nadu" name="states">Tamil Nadu</option>
+                                <option value="Telangana" name="states">Telangana</option>
+                                <option value="Tripura" name="states">Tripura</option>
+                                <option value="Uttar Pradesh" name="states">Uttar Pradesh</option>
+                                <option value="Uttarakhand" name="states">Uttarakhand</option>
+                                <option value="West Bengal" name="states">West Bengal</option>
+                                <option value="Andaman and Nicobar Islands" name="states">Andaman and Nicobar Islands
+                                </option>
+                                <option value="Chandigarh" name="states">Chandigarh</option>
+                                <option value="Dadra and Nagar Haveli" name="states">Dadra and Nagar Haveli</option>
+                                <option value="Daman and Diu" name="states">Daman and Diu</option>
+                                <option value="Delhi" name="states">Delhi</option>
+                                <option value="Lakshadweep" name="states">Lakshadweep</option>
+                                <option value="Puducherry" name="states">Puducherry</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                <i class="fas fa-chevron-down text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <button type="submit"
+                            class="submit-button text-white px-8 py-2 rounded-lg text-md font-semibold flex items-center justify-center"
+                            id="submitButton">
+                            <i class="fa-brands fa-whatsapp text-xl text-white group-hover:text-black"></i>
+                            <span class="ml-2"> Talk To Our Counsellor</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get all apply buttons
+        const applyButtons = document.querySelectorAll('button:not([type="submit"])');
+        const modal = document.getElementById('applicationModal');
+        const applicationForm = document.getElementById('applicationForm');
+
+        // Add click event to all apply buttons
+        applyButtons.forEach(button => {
+            if (button.textContent.toLowerCase().includes('apply')) {
+                button.addEventListener('click', openModal);
+            }
+        });
+
+        // Function to open modal
+        function openModal() {
+            modal.classList.remove('hidden');
+        }
+
+        // Function to close modal
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target.classList.contains('bg-opacity-50')) {
+                closeModal();
+            }
+        });
+
+        // Add this function to show toast notifications
+        function showToast(message, type = 'success') {
+            // Remove any existing toasts
+            const existingToast = document.querySelector('.toast');
+            if (existingToast) {
+                existingToast.remove();
+            }
+
+            // Create toast element
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+
+            // Create message and close button container
+            const content = document.createElement('div');
+            content.className = 'flex items-center';
+
+            // Add icon based on type
+            const icon = document.createElement('i');
+            icon.className = type === 'success' ? 'fas fa-check-circle mr-2' : 'fas fa-exclamation-circle mr-2';
+            content.appendChild(icon);
+
+            // Add message
+            const text = document.createElement('span');
+            text.textContent = message;
+            content.appendChild(text);
+
+            toast.appendChild(content);
+
+            // Add close button
+            const closeButton = document.createElement('button');
+            closeButton.className = 'ml-4 text-white hover:text-gray-200 focus:outline-none';
+            closeButton.innerHTML = '<i class="fas fa-times"></i>';
+            closeButton.onclick = () => toast.remove();
+            toast.appendChild(closeButton);
+
+            // Add toast to document
+            document.body.appendChild(toast);
+
+            // Remove toast after 3 seconds
+            setTimeout(() => {
+                if (toast && toast.parentElement) {
+                    toast.remove();
+                }
+            }, 3000);
+        }
+
+        // Update the form submission code
+        applicationForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const fullName = document.getElementById('fullName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const education = document.querySelector('input[name="education"]:checked').value;
+            const state = document.getElementById('state').value;
+
+            let finalEducation = education;
+            if (education === 'ANM') {
+                const anmYears = document.getElementById('anmYears').value;
+                if (!anmYears) {
+                    showToast('Please select ANM course duration', 'error');
+                    return;
+                }
+                finalEducation = anmYears;
+            } else if (education === 'Other') {
+                const otherEducation = document.getElementById('otherEducationInput').value;
+                if (!otherEducation) {
+                    showToast('Please specify your education', 'error');
+                    return;
+                }
+                finalEducation = `Other - ${otherEducation}`;
+            }
+
+            // Create URL with parameters
+            const url = new URL('https://script.google.com/macros/s/AKfycbxJM0F9Qhwnx3QEe6IoQGriFhDLSXVGgRA6oAxKn0bc0JMqeDj2xboF-EeVyWvKVF1L/exec');
+            const params = new URLSearchParams({
+                name: fullName,
+                phone_no: phoneNumber,
+                education: finalEducation,
+                state: state,
+                websitePage: 'CSR Page',
+            });
+
+            try {
+                // Show loading state
+                const submitButton = applicationForm.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.innerHTML;
+                submitButton.innerHTML = '<span>Submitting...</span>';
+                submitButton.disabled = true;
+
+                // Send POST request
+                const response = await fetch(url, {
+                    method: 'POST',
+                    body: params,
+                    mode: 'no-cors'
+                });
+
+                // Reset form
+                applicationForm.reset();
+
+                // Close application modal
+                closeModal();
+
+                if (education === 'Other') {
+                    // Show ineligibility modal for "Other" education
+                    document.getElementById('ineligibleUserName').textContent = fullName;
+                    openThankYouModal();
+
+                    // Reload page after showing ineligibility modal
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 3000);
+                } else {
+                    // Format the message for WhatsApp and redirect for eligible candidates
+                    const whatsappMessage = `Hi, I am ${fullName} from ${state}.\nI have completed ${finalEducation}.\nI am interested in the nursing job opportunity in Japan.`;
+                    const whatsappNumber = "919035053109";
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+                    window.open(whatsappUrl, '_blank');
+
+                    // Reload page after WhatsApp redirect
+                    window.location.reload();
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                showToast('An error occurred. Please try again.', 'error');
+            } finally {
+                // Restore button state
+                const submitButton = applicationForm.querySelector('button[type="submit"]');
+                submitButton.innerHTML = originalButtonText;
+                submitButton.disabled = false;
+            }
+        });
+
+        // Close modal on escape key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Add this new code for handling the "Other" education option
+        const otherRadio = document.getElementById('other');
+        const otherEducationField = document.getElementById('otherEducationField');
+        const otherEducationInput = document.getElementById('otherEducationInput');
+        const educationRadios = document.querySelectorAll('input[name="education"]');
+
+        educationRadios.forEach(radio => {
+            radio.addEventListener('change', function () {
+                if (otherRadio.checked) {
+                    otherEducationField.classList.remove('hidden');
+                    otherEducationInput.required = true;
+                } else {
+                    otherEducationField.classList.add('hidden');
+                    otherEducationInput.required = false;
+                    otherEducationInput.value = '';
+                }
+            });
+        });
+    </script>
+    <script>
+        document.getElementById('applyNowButton').addEventListener('click', function () {
+            fbq('track', 'Lead', {
+                content_name: 'Apply Now Button Click'
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById('thankYouModal').addEventListener('click', function () {
+            fbq('track', 'CompleteRegistration', {
+                content_name: 'Submit Button Click'
+            });
+        });
+    </script>
+
+    <script>
+        // Get the ANM radio button and years dropdown
+        const anmRadio = document.getElementById('anm');
+        const anmYearsField = document.getElementById('anmYearsField');
+        const anmYearsSelect = document.getElementById('anmYears');
+
+        // Add event listeners to all education radio buttons
+        document.querySelectorAll('input[name="education"]').forEach(radio => {
+            radio.addEventListener('change', function () {
+                if (anmRadio.checked) {
+                    anmYearsField.classList.remove('hidden');
+                    anmYearsSelect.required = true;
+                } else {
+                    anmYearsField.classList.add('hidden');
+                    anmYearsSelect.required = false;
+                    anmYearsSelect.value = '';
+                }
+            });
+        });
+
+        // Update form submission to include ANM years
+        applicationForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Get form values
+            const fullName = document.getElementById('fullName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const education = document.querySelector('input[name="education"]:checked').value;
+            const state = document.getElementById('state').value;
+
+            // If education is "Other", show ineligibility message and return
+            if (education === 'Other') {
+                document.getElementById('ineligibleUserName').textContent = fullName;
+                openThankYouModal();
+                setTimeout(() => {
+                    closeModal();
+                }, 3000);
+                return;
+            }
+
+            let finalEducation = education;
+            if (education === 'ANM') {
+                const anmYears = document.getElementById('anmYears').value;
+                if (!anmYears) {
+                    showToast('Please select ANM course duration', 'error');
+                    return;
+                }
+                finalEducation = anmYears;
+            }
+
+        });
+    </script>
+
+    <!-- Thank You Modal -->
+    <div id="thankYouModal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-50 transition-opacity"></div>
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full relative">
+                <div>
+                    <h2 class="text-2xl font-semibold text-center mb-6 text-red-600">
+                        Hi <span id="ineligibleUserName"></span>,
+                    </h2>
+                    <p class="text-center text-gray-700 text-lg mb-6">
+                        Unfortunately, you are not eligible as this program is only for nursing candidates with ANM,
+                        GNM, or B.Sc. (Nursing).
+                    </p>
+                    <p class="text-center font-semibold text-gray-600">
+                        Thank you for your interest!
+                    </p>
+                    <div class="flex justify-center mt-6">
+                        <button onclick="closeThankYouModal()"
+                            class="fancy-button text-white px-8 py-2 rounded-lg text-md font-semibold">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Function to open thank you modal -->
+    <script>
+        function openThankYouModal() {
+            document.getElementById('thankYouModal').classList.remove('hidden');
+        }
+
+        // Function to close thank you modal
+        function closeThankYouModal() {
+            document.getElementById('thankYouModal').classList.add('hidden');
+        }
+    </script>
+
+    <script>
+        function toggleCheckbox(listItem) {
+            const checkbox = listItem.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
+        }
+    </script>
+</body>
+
+</html>
