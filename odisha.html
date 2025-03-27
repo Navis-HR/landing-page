@@ -274,42 +274,13 @@
     <!-- Section 1 -->
     <section class="section-container overflow-hidden">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-            <!-- Left Content-->
-            <div class="space-y-8" data-aos="fade-right">
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight title-underline">
-                    Your Nursing Career in Japan Starts Here
-                    <span class="text-red-600">– High Salary, Growth & Stability Await You!</span>
-                </h1>
-                <button onclick="openModal()"
-                    class="flex md:justify-start justify-center hover:scale-105 transition-all duration-300">
-                    <div
-                        class="bg-[#25D366] flex text-white text-xl font-bold items-center px-4 py-2 mb-4 rounded-lg w-fit text-center">
-                        <h1>100% Sponsorship Available <br />Through CSR program!</h1>
-                    </div>
-                </button>
-                <p class="text-lg sm:text-xl text-gray-700 leading-relaxed">
-                    Secure a rewarding nursing career in Japan with a competitive salary, career advancement, and job
-                    stability.
-                    Get full visa support, complimentary language training, and guaranteed placement in leading
-                    hospitals.
-                </p>
-                <div class="pt-4 flex flex-col sm:flex-row sm:items-center gap-4 justify-center">
-                    <button
-                        class="fancy-button text-white px-16 py-4 rounded-lg text-lg font-semibold flex items-center justify-center"
-                        id="applyNowButton">
-                        <span>Apply Now</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Right Content-->
-            <div class="relative">
+            <!-- Right Content (Image Section) - Moved to top for mobile -->
+            <div class="relative order-1 md:order-2">
                 <div class="flex flex-col items-center">
                     <div class="img-hover-zoom mb-6 w-full max-w-xl mx-auto h-auto rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.1)]"
                         data-aos="fade-left">
                         <img src="./nursing-career.jpg" alt="Nurse in Japan"
-                            class="w-full max-w-xl h-auto rounded-2xl " />
+                            class="w-full max-w-xl h-auto rounded-2xl" />
                     </div>
 
                     <div class="stats-grid w-full" data-aos="fade-left" data-aos-delay="300">
@@ -328,6 +299,41 @@
                             <p class="text-gray-700 font-medium text-sm">Placement Rate</p>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Left Content - Moved to bottom for mobile -->
+            <div class="space-y-6 order-2 md:order-1" data-aos="fade-right">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight title-underline">
+                    Your Nursing Career in Japan Starts Here
+                    <span class="text-red-600">– High Salary, Growth & Stability Await You!</span>
+                </h1>
+                <div class="flex flex-col-reverse sm:flex-row justify-between items-center gap-4 mb-4">
+                    <button onclick="openModal()"
+                        class="flex justify-center hover:scale-105 transition-all duration-300">
+                        <div
+                            class="bg-[#25D366] flex text-white text-base sm:text-lg md:text-xl font-bold items-center px-3 sm:px-4 py-2 rounded-lg w-fit text-center">
+                            <h1>100% Sponsorship Provided by Odisha Skill Development Authority!</h1>
+                        </div>
+                    </button>
+
+                    <div class="flex md:justify-end justify-center">
+                        <img src="./OSDA.png" alt="OSDA" class="w-[50%] h-[50%] md:w-[70%] md:h-[70%] ">
+                    </div>
+                </div>
+                <p class="text-lg sm:text-xl text-gray-700 leading-relaxed">
+                    Secure a rewarding nursing career in Japan with a competitive salary, career advancement, and job
+                    stability.
+                    Get full visa support, complimentary language training, and guaranteed placement in leading
+                    hospitals.
+                </p>
+                <div class="pt-4 flex flex-col sm:flex-row sm:items-center gap-4 justify-center">
+                    <button
+                        class="fancy-button text-white px-16 py-4 rounded-lg text-lg font-semibold flex items-center justify-center"
+                        id="applyNowButton">
+                        <span>Apply Now</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -1670,9 +1676,17 @@
                     <i class="fas fa-times text-xl"></i>
                 </button>
 
-                <h2 class="text-2xl font-semibold text-center mb-6 uppercase">Apply for Japan Job Opportunity</h2>
-                <p class="text-sm bg-[#00d9ff] font-semibold p-2 w-[48%] mb-4 rounded-md">
-                    Role : Care Taker Nursing</p>
+                <h2 class="text-2xl font-semibold text-center mb-4 uppercase">Apply for Japan Job Opportunity</h2>
+                <div class="flex flex-col gap-2 mb-4">
+                    <div class="flex justify-center">
+                        <p class="text-sm bg-[#00d9ff] font-semibold p-2 w-fit rounded-md ">
+                            Role : Care Taker Nursing</p>
+                    </div>
+                    <p class="text-sm bg-yellow-100 text-yellow-600 font-semibold p-2 rounded-md flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        IMPORTANT: This opportunity is exclusively for candidates with Nursing background.
+                    </p>
+                </div>
                 <form id="applicationForm">
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="fullName">Full Name</label>
@@ -1899,13 +1913,13 @@
             }
 
             // Create URL with parameters
-            const url = new URL('https://script.google.com/macros/s/AKfycbxJM0F9Qhwnx3QEe6IoQGriFhDLSXVGgRA6oAxKn0bc0JMqeDj2xboF-EeVyWvKVF1L/exec');
+            const url = new URL('https://script.google.com/macros/s/AKfycbyujWv2bCiDYJSmlJ3ZX9aagN0HV14u2ENmA34p3MGQHAT0inG28M2v7wsFGIIVqZuY/exec');
             const params = new URLSearchParams({
                 name: fullName,
                 phone_no: phoneNumber,
                 education: finalEducation,
                 state: state,
-                websitePage: 'CSR Page',
+                websitePage: 'Odisha Page',
             });
 
             try {
@@ -1940,7 +1954,7 @@
                 } else {
                     // Format the message for WhatsApp and redirect for eligible candidates
                     const whatsappMessage = `Hi, I am ${fullName} from ${state}.\nI have completed ${finalEducation}.\nI am interested in the nursing job opportunity in Japan.`;
-                    const whatsappNumber = "919035053109";
+                    const whatsappNumber = "919071002352";
                     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
                     window.open(whatsappUrl, '_blank');
 
