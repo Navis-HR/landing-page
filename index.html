@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAVIS HR</title>
+    <title>NAVIS HR || CSR Program</title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
@@ -81,6 +82,16 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(242, 74, 74, 0.6);
             background: linear-gradient(135deg, #d02828 0%, #b01616 100%);
+        }
+
+        .submit-button {
+            background: #25D366;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            background: #25D366;
         }
 
         .feature-card {
@@ -263,35 +274,13 @@
     <!-- Section 1 -->
     <section class="section-container overflow-hidden">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-            <!-- Left Content-->
-            <div class="space-y-8" data-aos="fade-right">
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight title-underline">
-                    Your Nursing Career in Japan Starts Here
-                    <span class="text-red-600">– High Salary, Growth & Stability Await You!</span>
-                </h1>
-                <p class="text-lg sm:text-xl text-gray-700 leading-relaxed">
-                    Secure a rewarding nursing career in Japan with a competitive salary, career advancement, and job
-                    stability.
-                    Get full visa support, complimentary language training, and guaranteed placement in leading
-                    hospitals.
-                </p>
-                <div class="pt-4 flex flex-col sm:flex-row sm:items-center gap-4 justify-center">
-                    <button
-                        class="fancy-button text-white px-16 py-4 rounded-lg text-lg font-semibold flex items-center justify-center"
-                        id="applyNowButton">
-                        <span>Apply Now</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Right Content-->
-            <div class="relative">
+            <!-- Right Content (Image Section) - Moved to top for mobile -->
+            <div class="relative order-1 md:order-2">
                 <div class="flex flex-col items-center">
                     <div class="img-hover-zoom mb-6 w-full max-w-xl mx-auto h-auto rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.1)]"
                         data-aos="fade-left">
                         <img src="./nursing-career.jpg" alt="Nurse in Japan"
-                            class="w-full max-w-xl h-auto rounded-2xl " />
+                            class="w-full max-w-xl h-auto rounded-2xl" />
                     </div>
 
                     <div class="stats-grid w-full" data-aos="fade-left" data-aos-delay="300">
@@ -310,6 +299,31 @@
                             <p class="text-gray-700 font-medium text-sm">Placement Rate</p>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Left Content - Moved to bottom for mobile -->
+            <div class="space-y-8 order-2 md:order-1" data-aos="fade-right">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight title-underline">
+                    Your Nursing Career in Japan Starts Here
+                    <span class="text-red-600">– High Salary, Growth & Stability Await You!</span>
+                </h1>
+                <h1
+                    class="bg-[#ff0000] text-white text-base sm:text-lg md:text-xl font-bold items-center px-3 sm:px-4 py-2 rounded-lg w-fit text-center">
+                    Salary range from 1.05 Lakh to 1.4 Lakh</h1>
+                <p class="text-lg sm:text-xl text-gray-700 leading-relaxed">
+                    Secure a rewarding nursing career in Japan with a competitive salary, career advancement, and job
+                    stability.
+                    Get full visa support, complimentary language training, and guaranteed placement in leading
+                    hospitals.
+                </p>
+                <div class="pt-4 flex flex-col sm:flex-row sm:items-center gap-4 justify-center">
+                    <button
+                        class="fancy-button text-white px-16 py-4 rounded-lg text-lg font-semibold flex items-center justify-center"
+                        id="applyNowButton">
+                        <span>Apply Now</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -346,26 +360,28 @@
                 <div class="mt-6">
                     <h4 class="font-bold text-xl mb-4 text-gray-800">What's Stopping You?</h4>
                     <ul class="space-y-5 custom-list">
-                        <li
-                            class="flex items-start bg-white/50 p-4 rounded-xl shadow-sm hover:shadow-md transition-all">
-                            <input type="checkbox" class="w-8 h-8 mt-4 mr-3 accent-green-600 cursor-pointer">
+                        <li class="flex items-start bg-white/50 p-4 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer"
+                            onclick="toggleCheckbox(this)">
+                            <input type="checkbox" class="w-8 h-8 mt-4 mr-3 accent-green-600 cursor-pointer"
+                                onclick="event.stopPropagation()">
                             <div>
                                 <span class="font-semibold text-gray-900">Don't Speak Japanese?</span>
                                 <p class="text-gray-700 mt-1">No problem! We provide comprehensive language training so
                                     you can communicate confidently in any healthcare setting.</p>
                             </div>
                         </li>
-                        <li
-                            class="flex items-start bg-white/50 p-4 rounded-xl shadow-sm hover:shadow-md transition-all">
-                            <input type="checkbox" class="w-6 h-6 mt-4 mr-3 accent-green-600 cursor-pointer">
+                        <li class="flex items-start bg-white/50 p-4 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer"
+                            onclick="toggleCheckbox(this)">
+                            <input type="checkbox" class="w-6 h-6 mt-4 mr-3 accent-green-600 cursor-pointer"
+                                onclick="event.stopPropagation()">
                             <div>
                                 <span class="font-semibold text-gray-900">Visa & Licensing Feels Complicated?</span>
                                 <p class="text-gray-700 mt-1">We handle all paperwork & approvals for you, making the
                                     process smooth and stress-free!</p>
                             </div>
                         </li>
-                        <li
-                            class="flex items-start bg-white/50 p-4 rounded-xl shadow-sm hover:shadow-md transition-all">
+                        <li class="flex items-start bg-white/50 p-4 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer"
+                            onclick="toggleCheckbox(this)">
                             <input type="checkbox" class="w-8 h-8 mt-4 mr-3 accent-green-600 cursor-pointer">
                             <div>
                                 <span class="font-semibold text-gray-900">Struggling to Find the Right Job?</span>
@@ -1651,8 +1667,16 @@
                 </button>
 
                 <h2 class="text-2xl font-semibold text-center mb-6 uppercase">Apply for Japan Job Opportunity</h2>
-                <p class="text-sm bg-[#00d9ff] font-semibold p-2 w-[48%] mb-4 rounded-md">
-                    Role : Care Taker Nursing</p>
+                <div class="flex flex-col gap-2 mb-4">
+                    <div class="flex justify-center">
+                        <p class="text-sm bg-[#00d9ff] font-semibold p-2 w-fit rounded-md ">
+                            Role : Care Taker Nursing</p>
+                    </div>
+                    <p class="text-sm bg-yellow-100 text-yellow-600 font-semibold p-2 rounded-md flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        IMPORTANT: This opportunity is exclusively for candidates with Nursing background.
+                    </p>
+                </div>
                 <form id="applicationForm">
                     <div class="mb-4">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="fullName">Full Name</label>
@@ -1763,9 +1787,10 @@
                     </div>
                     <div class="flex items-center justify-center">
                         <button type="submit"
-                            class="fancy-button text-white px-8 py-2 rounded-lg text-md font-semibold flex items-center justify-center"
+                            class="submit-button text-white px-8 py-2 rounded-lg text-md font-semibold flex items-center justify-center"
                             id="submitButton">
-                            <span>Submit</span>
+                            <i class="fa-brands fa-whatsapp text-xl text-white group-hover:text-black"></i>
+                            <span class="ml-2"> Talk To Our Counsellor</span>
                         </button>
                     </div>
                 </form>
@@ -1857,26 +1882,24 @@
             // Get form values
             const fullName = document.getElementById('fullName').value;
             const phoneNumber = document.getElementById('phoneNumber').value;
-
-            // Validate phone number
-            if (!/^\d{10}$/.test(phoneNumber)) {
-                showToast('Please enter exactly 10 digits for phone number', 'error');
-                return;
-            }
-
             const education = document.querySelector('input[name="education"]:checked').value;
             const state = document.getElementById('state').value;
 
             let finalEducation = education;
-            if (education === 'Other') {
-                finalEducation = document.getElementById('otherEducationInput').value;
-            } else if (education === 'ANM') {
+            if (education === 'ANM') {
                 const anmYears = document.getElementById('anmYears').value;
                 if (!anmYears) {
                     showToast('Please select ANM course duration', 'error');
                     return;
                 }
                 finalEducation = anmYears;
+            } else if (education === 'Other') {
+                const otherEducation = document.getElementById('otherEducationInput').value;
+                if (!otherEducation) {
+                    showToast('Please specify your education', 'error');
+                    return;
+                }
+                finalEducation = `Other - ${otherEducation}`;
             }
 
             // Create URL with parameters
@@ -1903,18 +1926,35 @@
                     mode: 'no-cors'
                 });
 
-                // Show thank you modal instead of toast
-                openThankYouModal();
-
                 // Reset form
                 applicationForm.reset();
 
-                // Close modal
+                // Close application modal
                 closeModal();
+
+                if (education === 'Other') {
+                    // Show ineligibility modal for "Other" education
+                    document.getElementById('ineligibleUserName').textContent = fullName;
+                    openThankYouModal();
+
+                    // Reload page after showing ineligibility modal
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 3000);
+                } else {
+                    // Format the message for WhatsApp and redirect for eligible candidates
+                    const whatsappMessage = `Hi, I am ${fullName} from ${state}.\nI have completed ${finalEducation}.\nI am interested in the nursing job opportunity in Japan.`;
+                    const whatsappNumber = "916366119713";
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+                    window.open(whatsappUrl, '_blank');
+
+                    // Reload page after WhatsApp redirect
+                    window.location.reload();
+                }
 
             } catch (error) {
                 console.error('Error:', error);
-                // Handle error (optional)
+                showToast('An error occurred. Please try again.', 'error');
             } finally {
                 // Restore button state
                 const submitButton = applicationForm.querySelector('button[type="submit"]');
@@ -1995,14 +2035,26 @@
             const education = document.querySelector('input[name="education"]:checked').value;
             const state = document.getElementById('state').value;
 
-            let finalEducation = education;
+            // If education is "Other", show ineligibility message and return
             if (education === 'Other') {
-                finalEducation = document.getElementById('otherEducationInput').value;
-            } else if (education === 'ANM') {
-                const anmYears = document.getElementById('anmYears').value;
-                const years = document.getElementById('anmYears').value;
-                finalEducation = `ANM (${years} Year${years > 1 ? 's' : ''})`;
+                document.getElementById('ineligibleUserName').textContent = fullName;
+                openThankYouModal();
+                setTimeout(() => {
+                    closeModal();
+                }, 3000);
+                return;
             }
+
+            let finalEducation = education;
+            if (education === 'ANM') {
+                const anmYears = document.getElementById('anmYears').value;
+                if (!anmYears) {
+                    showToast('Please select ANM course duration', 'error');
+                    return;
+                }
+                finalEducation = anmYears;
+            }
+
         });
     </script>
 
@@ -2011,40 +2063,17 @@
         <div class="absolute inset-0 bg-black bg-opacity-50 transition-opacity"></div>
         <div class="flex items-center justify-center min-h-screen p-4">
             <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full relative">
-                <h2 class="text-3xl font-bold text-center mb-6">Thank You!</h2>
                 <div>
-                    <h2 class="text-xl font-semibold text-center mb-6">
-                        Step 2: Join Our Exclusive Whatsapp Channel For Updates & More Fun Content
+                    <h2 class="text-2xl font-semibold text-center mb-6 text-red-600">
+                        Hi <span id="ineligibleUserName"></span>,
                     </h2>
-                    <div class="flex flex-wrap gap-5 justify-center mb-6">
-                        <a href="https://whatsapp.com/channel/0029VajQTzg89ineidsAD90o"
-                            class="social-icon group bg-[#25D366]">
-                            <i class="fa-brands fa-whatsapp text-xl text-white group-hover:text-black"></i>
-                            <span class="ml-3 text-white group-hover:text-black">Whatsapp</span>
-                        </a>
-                    </div>
-                    <p class="text-center font-semibold">Your application has been submitted successfully. We will get
-                        back
-                        to you soon!
+                    <p class="text-center text-gray-700 text-lg mb-6">
+                        Unfortunately, you are not eligible as this program is only for nursing candidates with ANM,
+                        GNM, or B.Sc. (Nursing).
                     </p>
-                    <div class="flex justify-center space-x-5 mt-4">
-                        <a href="https://www.facebook.com/NAVISHROFFICIAL/"
-                            class="bg-white/50 hover:bg-red-500 p-4 rounded-full transition-all duration-300 w-14 h-14 flex items-center justify-center transform hover:scale-110 hover:-translate-y-2 border border-gray-500 group">
-                            <i class="fab fa-facebook-f text-xl text-gray-700 group-hover:text-white"></i>
-                        </a>
-                        <a href="https://www.instagram.com/navishumanresources/"
-                            class="bg-white/50 hover:bg-red-500 p-4 rounded-full transition-all duration-300 w-14 h-14 flex items-center justify-center transform hover:scale-110 hover:-translate-y-2 border border-gray-500 group">
-                            <i class="fab fa-instagram text-xl text-gray-700 group-hover:text-white"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@navishumanresources"
-                            class="bg-white/50 hover:bg-red-500 p-4 rounded-full transition-all duration-300 w-14 h-14 flex items-center justify-center transform hover:scale-110 hover:-translate-y-2 border border-gray-500 group">
-                            <i class="fab fa-youtube text-xl text-gray-700 group-hover:text-white"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/company/navishumanresources/"
-                            class="bg-white/50 hover:bg-red-500 p-4 rounded-full transition-all duration-300 w-14 h-14 flex items-center justify-center transform hover:scale-110 hover:-translate-y-2 border border-gray-500 group">
-                            <i class="fab fa-linkedin-in text-xl text-gray-700 group-hover:text-white"></i>
-                        </a>
-                    </div>
+                    <p class="text-center font-semibold text-gray-600">
+                        Thank you for your interest!
+                    </p>
                     <div class="flex justify-center mt-6">
                         <button onclick="closeThankYouModal()"
                             class="fancy-button text-white px-8 py-2 rounded-lg text-md font-semibold">
@@ -2065,6 +2094,13 @@
         // Function to close thank you modal
         function closeThankYouModal() {
             document.getElementById('thankYouModal').classList.add('hidden');
+        }
+    </script>
+
+    <script>
+        function toggleCheckbox(listItem) {
+            const checkbox = listItem.querySelector('input[type="checkbox"]');
+            checkbox.checked = !checkbox.checked;
         }
     </script>
 </body>
