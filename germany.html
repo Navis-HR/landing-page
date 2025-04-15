@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAVIS HR || Odisha Skill Development Authority</title>
+    <title>NAVIS HR || Germany Job Opportunity</title>
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
@@ -30,10 +29,10 @@
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=512852125147985&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
-
     <style>
+        /* Global Blue Theme */
         body {
-            background: linear-gradient(135deg, #faf5f5 0%, #e2c3c3 100%);
+            background: linear-gradient(135deg, #e6f7ff 0%, #b3d9ff 100%);
             min-height: 100vh;
             overflow-x: hidden;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -71,17 +70,29 @@
             }
         }
 
-        /* Updated fancy button styles from blue to red */
+        /* Updated fancy button styles from red to blue */
         .fancy-button {
-            background: linear-gradient(135deg, #f24a4a 0%, #d02828 100%);
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(242, 74, 74, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
         }
 
         .fancy-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(242, 74, 74, 0.6);
-            background: linear-gradient(135deg, #d02828 0%, #b01616 100%);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.6);
+            background: linear-gradient(135deg, #0056b3 0%, #003d80 100%);
+        }
+
+        .fancy-floating-button {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+        }
+
+        .fancy-floating-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.6);
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
         }
 
         .submit-button {
@@ -117,13 +128,13 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        /* Updated title underline from blue to red gradient */
+        /* Updated title underline from red to blue gradient */
         .title-underline::after {
             content: '';
             display: block;
             width: 50px;
             height: 3px;
-            background: linear-gradient(90deg, #f24a4a, #e2c3c3);
+            background: linear-gradient(90deg, #007bff, #b3d9ff);
             margin-top: 0.5rem;
         }
 
@@ -251,9 +262,38 @@
         .social-icon:hover {
             background: var(--primary-color);
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(37, 211, 102);
+            box-shadow: 0 10px 25px rgba(0, 123, 255);
             color: white;
+        }
 
+        /* Add floating button styles */
+        .floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 10;
+            animation: pulse 2s infinite;
+            border-radius: 40px;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .floating-button:hover {
+            transform: translateY(-1px);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(0, 123, 255, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+            }
         }
     </style>
 </head>
@@ -270,7 +310,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Section 1 -->
     <section class="section-container overflow-hidden">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
@@ -282,61 +321,44 @@
                         <img src="./nursing-career.jpg" alt="Nurse in Japan"
                             class="w-full max-w-xl h-auto rounded-2xl" />
                     </div>
-
                     <div class="stats-grid w-full" data-aos="fade-left" data-aos-delay="300">
                         <div class="stats-card p-4 rounded-xl text-center">
-                            <h2 class="text-2xl sm:text-3xl font-bold text-red-600 mb-2">23+</h2>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">23+</h2>
                             <p class="text-gray-700 font-medium text-sm">Years of Experience</p>
                         </div>
-
                         <div class="stats-card p-4 rounded-xl text-center">
-                            <h2 class="text-2xl sm:text-3xl font-bold text-red-600 mb-2">1000+</h2>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">1000+</h2>
                             <p class="text-gray-700 font-medium text-sm">Candidates Placed</p>
                         </div>
-
                         <div class="stats-card p-4 rounded-xl text-center">
-                            <h2 class="text-2xl sm:text-3xl font-bold text-red-600 mb-2">99%</h2>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">99%</h2>
                             <p class="text-gray-700 font-medium text-sm">Placement Rate</p>
                         </div>
                     </div>
                 </div>
             </div>
-
             <!-- Left Content - Moved to bottom for mobile -->
-            <div class="space-y-6 order-2 md:order-1" data-aos="fade-right">
-                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900  title-underline "
-                    style="line-height: 1.3;">
-                    ଜାପାନରେ ଆପଣଙ୍କର ନର୍ସିଂ କ୍ୟାରିଅର ଆରମ୍ଭ କରିବାକୁ ଚାହୁଁଛନ୍ତି କି?
-                    <span class="text-red-600">– ଅଧିକ ଦରମା, ଅଭିବୃଦ୍ଧି ଏବଂ ସ୍ଥିରତା ଆପଣଙ୍କ
-                        ପାଇଁ ଅପେକ୍ଷା କରିଛି!</span>
+            <div class="space-y-8 order-2 md:order-1" data-aos="fade-right">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight title-underline">
+                    Your Nursing Skills Deserve the World
+                    <span class="text-blue-600">– Start Your Career In Germany Today! </span>
                 </h1>
-                <div>
-
-                    <h1
-                        class="bg-[#ff0000] text-white text-base sm:text-lg md:text-xl font-bold items-center px-3 sm:px-4 py-2 rounded-lg w-fit text-center">
-                        ମାସିକ ଦରମା ୧,୦୫,୦୦୦ ରୁ ୧,୪୦,୦୦୦(ଭାରତୀୟ ମୁଦ୍ରା)</h1>
-                    <div class="flex flex-col-reverse sm:flex-row justify-between items-center gap-4 mb-4">
-
-                        <button onclick="openModal()"
-                            class="flex justify-center hover:scale-105 transition-all duration-300">
-                            <div
-                                class="bg-[#25D366] flex text-white text-base sm:text-lg md:text-xl font-bold items-center px-3 sm:px-4 py-2 rounded-lg w-fit text-center">
-                                <h1>ଓଡ଼ିଶା ଦକ୍ଷତା ବିକାଶ କର୍ତ୍ତୃପକ୍ଷଙ୍କ ଦ୍ୱାରା ୧୦୦% ମାଗଣା ପ୍ରଦାନ କରାଯିବ.</h1>
-                            </div>
-                        </button>
-
-                        <div class="flex md:justify-end justify-center">
-                            <img src="./OSDA.png" alt="OSDA" class="w-[50%] h-[50%] md:w-[70%] md:h-[70%] ">
+                <h1
+                    class="bg-[#007bff] text-white text-base sm:text-lg md:text-xl font-bold items-center px-3 sm:px-4 py-2 rounded-lg w-fit text-center">
+                    Salary range from 1.05 Lakh to 1.4 Lakh</h1>
+                <div class="flex md:justify-start justify-center">
+                    <button onclick="openModal()"
+                        class="flex md:justify-start justify-center hover:scale-105 transition-all duration-300">
+                        <div
+                            class="bg-[#25D366] flex text-white text-xl font-bold items-center px-4 py-2 mb-4 rounded-lg w-fit text-center">
+                            <h1>WORK IN GERMANY</h1>
                         </div>
-                    </div>
+                    </button>
                 </div>
                 <p class="text-lg sm:text-xl text-gray-700 leading-relaxed">
-                    Secure a rewarding <span class="font-bold">ବିଦେଶରେ ନର୍ସିଂ କ୍ୟାରିୟର</span> with a competitive salary,
-                    career
-                    advancement, and job
-                    stability. Get full visa support, complimentary language training, and guaranteed placement in
-                    leading hospitals.
-
+                    Start a fulfilling nursing career in Germany with excellent pay, clear growth opportunities, and
+                    long-term job security—benefit from complete visa assistance, free language training, and assured
+                    placement in top-tier hospitals.
                 </p>
                 <div class="pt-4 flex flex-col sm:flex-row sm:items-center gap-4 justify-center">
                     <button
@@ -370,57 +392,51 @@
             <!-- Right Content -->
             <div class="space-y-6" data-aos="fade-left">
                 <div class="space-y-2">
-                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight title-underline"
-                        style="line-height: 1.3;">
-                        କିପରି <span class="bg-[#ff0000] p-1 font-bold rounded-md 
-                        text-white">୧୦୦୦+ ନର୍ସ</span>ଏହି ଚ୍ୟାଲେଞ୍ଜଗୁଡ଼ିକୁ ଅତିକ୍ରମ କଲେ ଏବଂ ଜାପାନରେ ସେମାନଙ୍କର ସ୍ୱପ୍ନର
-                        କ୍ୟାରିଅର ଆରମ୍ଭ କଲେ
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight title-underline">
+                        <span class="bg-[#007bff]  font-bold rounded-md 
+                        text-white"> 1000+ Indian Nurses </span>Have Made the Move — You Can Too!
                     </h2>
-                    <p class="font-bold text-xl text-red-600 mt-4">ଚିନ୍ତା କରନ୍ତୁ ନାହିଁ—ଆମେ 1,000+ ନର୍ସଙ୍କୁ ବିଦେଶରେ
-                        ସେମାନଙ୍କର ସ୍ୱପ୍ନର ନର୍ସିଂ ଚାକିରି ପାଇବାରେ ସାହାଯ୍ୟ କରିଛୁ, ଏବଂ ଆପଣ ପରବର୍ତ୍ତୀ ହୋଇପାରିବେ!
-                    </p>
+                    <p class="font-bold text-xl text-blue-600 mt-4">NAVIS HR has already helped a lot of nurses build
+                        successful careers abroad.
+                        Now, it's your turn to join them!</p>
                 </div>
                 <div class="mt-6">
-                    <h4 class="font-bold text-xl mb-4 text-gray-800">What's Stopping You?</h4>
+                    <h4 class="font-bold text-xl mb-4 text-gray-800">What's Holding You Back?</h4>
                     <ul class="space-y-5 custom-list">
                         <li class="flex items-start bg-white/50 p-4 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer"
                             onclick="toggleCheckbox(this)">
-                            <input type="checkbox" class="w-16 h-16 mt-4 mr-3 accent-green-600 cursor-pointer"
+                            <input type="checkbox" class="w-5 h-5 mt-4 mr-3 accent-green-600 cursor-pointer"
                                 onclick="event.stopPropagation()">
                             <div>
-                                <span class="font-semibold text-gray-900">ଜାପାନୀ କହିପାରୁନାହାଁନ୍ତି?</span>
-                                <p class="text-gray-700 mt-1">କିଛି ଅସୁବିଧା ନାହିଁ! ଆମ ପାଖରେ ଅଛନ୍ତି ଜାପାନ ର ଶିଖିୟକ ଜାପାନ
-                                    ଭାଷା ଶିଖିବାରେ କୌଣସି ଅସୁବିଧା ହେବ ନାଇଁ ଯାହା ଦ୍ୱାରା ଆପଣ ଯେକୌଣସି ସ୍ୱାସ୍ଥ୍ୟସେବା କ୍ଷେତ୍ରରେ
-                                    ଆତ୍ମବିଶ୍ୱାସର ସହିତ କାମ କରିପାରିବେ, ଯାହା ଆପଣଙ୍କୁ ବିଦେଶରେ ସହଜରେ GNM ନର୍ସିଂ ଚାକିରି
-                                    ସୁରକ୍ଷିତ କରିବାରେ ସାହାଯ୍ୟ କରିବ ।</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start bg-white/50 p-4 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer"
-                            onclick="toggleCheckbox(this)">
-                            <input type="checkbox" class="w-6 h-6 mt-4 mr-3 accent-green-600 cursor-pointer"
-                                onclick="event.stopPropagation()">
-                            <div>
-                                <span class="font-semibold text-gray-900">ଭିସା ଏବଂ ଲାଇସେନ୍ସିଂ ଜଟିଳ ଲାଗୁଛି କି? </span>
-                                <p class="text-gray-700 mt-1">ଆମେ ଆପଣଙ୍କ ପାଇଁ ସମସ୍ତ କାଗଜପତ୍ର ଏବଂ ଅନୁମୋଦନ ପରିଚାଳନା କରୁ,
-                                    ଯାହା ପ୍ରକ୍ରିୟାକୁ ସୁଗମ ଏବଂ ସହଜ କରିଥାଏ!</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start bg-white/50 p-4 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer"
-                            onclick="toggleCheckbox(this)">
-                            <input type="checkbox" class="w-5 h-5 mt-4 mr-3 accent-green-600 cursor-pointer">
-                            <div>
-                                <span class="font-semibold text-gray-900">ଠିକ୍ ଚାକିରି ଖୋଜିବା ପାଇଁ ସଂଘର୍ଷ କରୁଛନ୍ତି
-                                    କି?</span>
-                                <p class="text-gray-700 mt-1"> ତୁମର ଅଭିଜ୍ଞତା ହେତୁ ତୁମେ ଏକ ଭଲ ଡାକ୍ତରଖାନାରେ ଚାକିରି
-                                    ପାଇପାରିବ
+                                <span class="font-semibold text-gray-900">Don't Speak German?</span>
+                                <p class="text-gray-700 mt-1">No problem! We provide intensive German language training
+                                    <br />(up to B2 level), so you're confident and job-ready.
                                 </p>
                             </div>
                         </li>
+                        <li class="flex items-start bg-white/50 p-4 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer"
+                            onclick="toggleCheckbox(this)">
+                            <input type="checkbox" class="w-5 h-5 mt-4 mr-3 accent-green-600 cursor-pointer"
+                                onclick="event.stopPropagation()">
+                            <div>
+                                <span class="font-semibold text-gray-900">Worried About Visa & Licensing?</span>
+                                <p class="text-gray-700 mt-1">We manage all the paperwork, approvals, and legalities for
+                                    you, <br />making the process simple and stress-free.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start bg-white/50 p-4 rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer"
+                            onclick="toggleCheckbox(this)">
+                            <input type="checkbox" class="w-8 h-8 mt-4 mr-3 accent-green-600 cursor-pointer">
+                            <div>
+                                <span class="font-semibold text-gray-900">Can't Find the Right Job?</span>
+                                <p class="text-gray-700 mt-1"> With guaranteed placement, we ensure you get hired in
+                                    reputed German hospitals that recognize your skills and dedication.</p>
+                            </div>
+                        </li>
                     </ul>
-                    <p class="mt-6 font-semibold text-red-700 text-lg">ଆପଣ ସ୍ଥାନୀୟ ନର୍ସିଂ ଚାକିରି ଅପେକ୍ଷା <span class="bg-[#ff0000] p-1 font-bold rounded-md 
-                        text-white ">୧୦ ଗୁଣ ଅଧିକ</span>
-                        ରୋଜଗାର କରିବେ ଏବଂ ଜାପାନରେ ଆପଣଙ୍କର ଭବିଷ୍ୟତ ଗଢିବେ.
-                    </p>
+                    <p class="mt-6 font-semibold text-blue-700 text-lg">You'll earn <span class="bg-[#007bff]  font-bold rounded-md 
+                        text-white ">10X more</span>
+                        than typical local nursing roles!</p>
                 </div>
             </div>
         </div>
@@ -433,18 +449,19 @@
             <div class="space-y-6 order-2 md:order-1" data-aos="fade-right">
                 <div class="space-y-2">
                     <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight title-underline">
-                        Is This for You? <span class=" text-green-500">Yes, If...</span>
+                        Is This Opportunity Right for <span class="bg-[#007bff]  font-bold rounded-md 
+                        text-white"> You? </span>
                     </h2>
                 </div>
                 <div class="bg-white/30 backdrop-blur-md p-6 rounded-2xl custom-shadow">
                     <ul class="space-y-5 custom-list">
                         <li class="flex items-center">
-                            <input type="checkbox" class="w-6 h-6 mt-1 mr-3 accent-green-600 cursor-pointer">
+                            <input type="checkbox" class="w-5 h-5 mt-1 mr-3 accent-green-600 cursor-pointer">
                             <div>
                                 <p class="text-gray-800">
-                                    You're a <span class="font-semibold">B.Sc Nursing, ANM, or GNM graduate</span>
-                                    looking for a
-                                    <span class="font-semibold">high-paying, stable job in Japan.</span>
+                                    You're a B.Sc Nursing with a <span class="font-semibold">Minimum of 1 year of
+                                        Experience</span>
+
                                 </p>
                             </div>
                         </li>
@@ -452,8 +469,7 @@
                             <input type="checkbox" class="w-5 h-5 mt-1 mr-3 accent-green-600 cursor-pointer">
                             <div>
                                 <p class="text-gray-800">
-                                    You want <span class="font-semibold">10X higher salary</span> with <span
-                                        class="font-semibold">full visa & job placement support.</span>
+                                    You want a high-paying, stable job in Germany
                                 </p>
                             </div>
                         </li>
@@ -461,8 +477,7 @@
                             <input type="checkbox" class="w-5 h-5 mt-1 mr-3 accent-green-600 cursor-pointer">
                             <div>
                                 <p class="text-gray-800">
-                                    You need <span class="font-semibold">Japanese language training</span> to work in
-                                    top hospitals.
+                                    You need support with language training, licensing, and visa
                                 </p>
                             </div>
                         </li>
@@ -470,15 +485,14 @@
                             <input type="checkbox" class="w-5 h-5 mt-1 mr-3 accent-green-600 cursor-pointer">
                             <div>
                                 <p class="text-gray-800">
-                                    You seek <span class="font-semibold">career growth & long-term security</span> in a
-                                    respected profession.
+                                    You're looking for international exposure and long-term career growth
                                 </p>
                             </div>
                         </li>
                     </ul>
                     <div class="mt-8">
-                        <p class="font-bold text-xl text-red-700 mb-6">💡 ଯଦି ଏହା ଆପଣ, ତେବେ NAVIS HR ହେଉଛି ଆପଣଙ୍କ ସଫଳତାର
-                            ଦ୍ୱାର</p>
+                        <p class="font-bold text-xl text-blue-700 mb-6">💡 If that's you, NAVIS HR is your trusted
+                            partner to get there.</p>
                         <button
                             class="fancy-button text-white px-8 py-4 rounded-lg text-lg font-semibold flex items-center justify-center w-full sm:w-auto"
                             id="applyNowButton">
@@ -492,7 +506,8 @@
             <!-- Right content -->
             <div class="relative overflow-hidden order-1 md:order-2 rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.1)]"
                 data-aos="fade-left">
-                <div class="absolute top-0 right-0 bg-red-600/80 text-white py-2 px-4 rounded-bl-lg rounded-tr-lg z-10">
+                <div
+                    class="absolute top-0 right-0 bg-blue-600/80 text-white py-2 px-4 rounded-bl-lg rounded-tr-lg z-10">
                     <span class="font-semibold">Qualified Nurses</span>
                 </div>
                 <div class="slider-container">
@@ -513,9 +528,9 @@
     <section class="section-container overflow-hidden bg-white/30 backdrop-blur-md rounded-3xl custom-shadow">
         <div class="text-center mb-10" data-aos="fade-up">
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                High-Paying Nursing Jobs in Japan
+                Why Choose Nursing in Germany?
             </h2>
-            <p class="text-xl text-red-600 font-semibold">Secure Your Future Today!</p>
+            <p class="text-xl text-blue-600 font-semibold">Secure Your Future Today!</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -524,7 +539,7 @@
                 <div class="relative overflow-hidden rounded-2xl shadow-[0_0_25px_rgba(0,0,0,0.1)] "
                     data-aos="fade-right">
                     <div
-                        class="absolute top-0 left-0 bg-gradient-to-r from-red-600 to-red-500 text-white py-2 px-4 rounded-br-lg rounded-tl-lg z-10 shadow-[0_0_25px_rgba(0,0,0,0.1)]">
+                        class="absolute top-0 left-0 bg-gradient-to-r from-blue-600 to-blue-500 text-white py-2 px-4 rounded-br-lg rounded-tl-lg z-10 shadow-[0_0_25px_rgba(0,0,0,0.1)]">
                         <span class="font-semibold">Success Stories</span>
                     </div>
                     <div class="img-hover-zoom relative ">
@@ -535,7 +550,7 @@
 
                 </div>
                 <div class="mt-6 text-center">
-                    <p class="font-bold text-xl text-red-700">Your Nursing Future Starts Here – Let NAVIS HR Guide You!
+                    <p class="font-bold text-xl text-blue-700">Your Nursing Future Starts Here – Let NAVIS HR Guide You!
                     </p>
                 </div>
             </div>
@@ -547,34 +562,37 @@
                             class="mb-4 bg-red-100 w-14 h-14 rounded-full flex items-center justify-center text-red-600">
                             <i class="fas fa-coins text-2xl"></i>
                         </div>
-                        <h3 class="font-bold text-lg text-gray-900 mb-2">High-Paying Jobs</h3>
-                        <p class="text-gray-700">Earn an attractive salary in Japan's top healthcare facilities with
-                            benefits.</p>
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">High Salary & Benefits</h3>
+                        <p class="text-gray-700"> Earn an attractive income with social security, health insurance, and
+                            retirement benefits.</p>
                     </li>
                     <li class="feature-card p-6 rounded-xl shadow-md col-span-1">
                         <div
                             class="mb-4 bg-green-100 w-14 h-14 rounded-full flex items-center justify-center text-green-600">
                             <i class="fas fa-rocket text-2xl"></i>
                         </div>
-                        <h3 class="font-bold text-lg text-gray-900 mb-2">Fast-Track Placement</h3>
-                        <p class="text-gray-700">Secure your dream job quickly with our expert guidance and support.</p>
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">Fast & Easy Placement</h3>
+                        <p class="text-gray-700"> Get placed quickly with our expert recruitment and onboarding support.
+                        </p>
                     </li>
                     <li class="feature-card p-6 rounded-xl shadow-md col-span-1">
                         <div
                             class="mb-4 bg-pink-100 w-14 h-14 rounded-full flex items-center justify-center text-pink-600">
                             <i class="fas fa-chart-line text-2xl"></i>
                         </div>
-                        <h3 class="font-bold text-lg text-gray-900 mb-2">Career Growth & Stability</h3>
-                        <p class="text-gray-700">Build a secure future in a globally respected profession with
-                            advancement.</p>
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">Career Growth & Stability
+                        </h3>
+                        <p class="text-gray-700">Secure your future in one of the world's most respected and advanced
+                            healthcare systems.</p>
                     </li>
                     <li class="feature-card p-6 rounded-xl shadow-md col-span-1">
                         <div
                             class="mb-4 bg-orange-100 w-14 h-14 rounded-full flex items-center justify-center text-orange-600">
                             <i class="fa-solid fa-hospital-user text-2xl"></i>
                         </div>
-                        <h3 class="font-bold text-lg text-gray-900 mb-2">Advanced Healthcare Exposure</h3>
-                        <p class="text-gray-700">Gain experience with cutting-edge medical technology and practices.
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">Global Medical Exposure</h3>
+                        <p class="text-gray-700"> Work with the latest medical technology and gain international
+                            experience that sets you apart.
                         </p>
                     </li>
                 </ul>
@@ -594,21 +612,21 @@
     <section class="section-container overflow-hidden py-16">
         <div class="text-center mb-12" data-aos="fade-up">
             <h2 class="text-2xl sm:text-3xl lg:text-3xl font-bold text-gray-900 mb-4 ">
-                From dreams to reality—hear how Navis HR helped <br />nurses build their future in Japan!
+                From dreams to reality—hear how Navis HR helped <br />nurses build their future in Germany!
             </h2>
-            <p class="text-xl text-red-600 font-semibold">Nurses Trust Us—Here's Why!</p>
-            <div class="w-24 h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto mt-4 rounded-full"></div>
+            <p class="text-xl text-blue-600 font-semibold">Nurses Trust Us—Here's Why!</p>
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mt-4 rounded-full"></div>
         </div>
 
         <div class="relative px-4 md:px-12 mx-2">
             <!-- Navigation Buttons - Improved visibility and positioning -->
             <button
-                class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg text-red-600 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-red-400 md:-ml-6 h-12 w-12 flex items-center justify-center"
+                class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg text-blue-600 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400 md:-ml-6 h-12 w-12 flex items-center justify-center"
                 onclick="moveTestimonials('prev')">
                 <i class="fas fa-chevron-left text-xl"></i>
             </button>
             <button
-                class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg text-red-600 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-red-400 md:-mr-6 h-12 w-12 flex items-center justify-center"
+                class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg text-blue-600 transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400 md:-mr-6 h-12 w-12 flex items-center justify-center"
                 onclick="moveTestimonials('next')">
                 <i class="fas fa-chevron-right text-xl"></i>
             </button>
@@ -1150,14 +1168,14 @@
             <h2 class="text-3xl md:text-4xl lg:text-3xl font-bold text-gray-900 mb-4">
                 Success in Their Own Words – Watch Their Journey!
             </h2>
-            <p class="text-xl text-red-600 font-semibold">Success Speaks!</p>
-            <div class="w-24 h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto mt-4 rounded-full"></div>
+            <p class="text-xl text-blue-600 font-semibold">Success Speaks!</p>
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mt-4 rounded-full"></div>
         </div>
 
         <!-- Video Slider Container -->
         <div class="relative px-4 md:px-12">
             <button id="prev-btn"
-                class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 md:p-3 shadow-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-200">
+                class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 md:p-3 shadow-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-gray-700" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -1243,7 +1261,7 @@
         </div>
     </section>
 
-    <div class="bg-red-700">
+    <div class="bg-blue-700">
         <div class="max-w-full mx-auto px-4 py-2 flex flex-col sm:flex-row justify-between items-center">
             <p class="text-white text-base mb-2 sm:mb-0">
                 Designed and Developed by <span class="font-semibold">NAVIS HR</span>
@@ -1253,6 +1271,15 @@
             </p>
         </div>
     </div>
+
+    <!-- Add floating button -->
+    <div class="floating-button">
+        <button onclick="openModal()"
+            class="fancy-floating-button  text-white px-6 py-3 rounded-full text-md font-semibold flex items-center justify-center shadow-lg">
+            <span>Apply Now</span>
+        </button>
+    </div>
+
     <script>
         AOS.init({
             duration: 1000,
@@ -1302,7 +1329,7 @@
 
             for (let i = 0; i < totalSlides; i++) {
                 const dot = document.createElement('button');
-                dot.className = `h-3 w-3 rounded-full transition-all duration-300 ${i === 0 ? 'bg-red-600 scale-125' : 'bg-red-300'} testimonial-dot`;
+                dot.className = `h-3 w-3 rounded-full transition-all duration-300 ${i === 0 ? 'bg-blue-600 scale-125' : 'bg-blue-300'} testimonial-dot`;
                 dot.setAttribute('data-index', i);
                 dot.addEventListener('click', () => {
                     currentTestimonialIndex = i;
@@ -1340,11 +1367,11 @@
             // Update dots
             testimonialDots.forEach((dot, index) => {
                 if (index === currentTestimonialIndex) {
-                    dot.classList.add('bg-red-600', 'scale-125');
-                    dot.classList.remove('bg-red-300');
+                    dot.classList.add('bg-blue-600', 'scale-125');
+                    dot.classList.remove('bg-blue-300');
                 } else {
-                    dot.classList.add('bg-red-300');
-                    dot.classList.remove('bg-red-600', 'scale-125');
+                    dot.classList.add('bg-blue-300');
+                    dot.classList.remove('bg-blue-600', 'scale-125');
                 }
             });
         }
@@ -1440,9 +1467,9 @@
                     dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
 
                     if (i === currentIndex % totalSlides) {
-                        dot.classList.add('bg-red-600');
+                        dot.classList.add('bg-blue-600');
                     } else {
-                        dot.classList.add('bg-gray-300', 'hover:bg-red-400');
+                        dot.classList.add('bg-gray-300', 'hover:bg-blue-400');
                     }
 
                     dot.addEventListener('click', () => {
@@ -1508,11 +1535,11 @@
                 const dots = dotsContainer.querySelectorAll('button');
                 dots.forEach((dot, index) => {
                     if (index === currentIndex % totalSlides) {
-                        dot.classList.remove('bg-gray-300', 'hover:bg-red-400');
-                        dot.classList.add('bg-red-600');
+                        dot.classList.remove('bg-gray-300', 'hover:bg-blue-400');
+                        dot.classList.add('bg-blue-600');
                     } else {
-                        dot.classList.remove('bg-red-600');
-                        dot.classList.add('bg-gray-300', 'hover:bg-red-400');
+                        dot.classList.remove('bg-blue-600');
+                        dot.classList.add('bg-gray-300', 'hover:bg-blue-400');
                     }
                 });
             }
@@ -1692,7 +1719,7 @@
                     <i class="fas fa-times text-xl"></i>
                 </button>
 
-                <h2 class="text-2xl font-semibold text-center mb-4 uppercase">Apply for Japan Job Opportunity</h2>
+                <h2 class="text-2xl font-semibold text-center mb-6 uppercase">Apply for Germany Job Opportunity</h2>
                 <div class="flex flex-col gap-2 mb-4">
                     <div class="flex justify-center">
                         <p class="text-sm bg-[#00d9ff] font-semibold p-2 w-fit rounded-md ">
@@ -1700,7 +1727,7 @@
                     </div>
                     <p class="text-sm bg-yellow-100 text-yellow-600 font-semibold p-2 rounded-md flex items-center">
                         <i class="fas fa-exclamation-triangle mr-2"></i>
-                        IMPORTANT: This opportunity is exclusively for candidates with Nursing background.
+                        IMPORTANT: This Opportunity Is Exclusively For Experience Candidates With Nursing Background.
                     </p>
                 </div>
                 <form id="applicationForm">
@@ -1724,15 +1751,7 @@
                         <label class="block text-gray-700 text-sm font-bold mb-2">Education</label>
                         <div class="flex flex-wrap items-center gap-4">
                             <div class="flex items-center">
-                                <input type="radio" class="mr-2" name="education" value="ANM" id="anm" required>
-                                <label for="anm">ANM</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input type="radio" class="mr-2" name="education" value="GNM" id="gnm">
-                                <label for="gnm">GNM</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input type="radio" class="mr-2" name="education" value="BSc Nursing" id="bsc">
+                                <input type="radio" class="mr-2" name="education" value="BSc Nursing" id="bsc" required>
                                 <label for="bsc">BSc (Nursing)</label>
                             </div>
                             <div class="flex items-center">
@@ -1740,27 +1759,30 @@
                                 <label for="other">Other</label>
                             </div>
                         </div>
-                        <!-- ANM Years dropdown -->
-                        <div id="anmYearsField" class="hidden mt-4">
-                            <div class="relative">
-                                <select
-                                    class="appearance-none border-[1.5px] border-gray-300 w-full rounded py-3 px-2 text-gray-700 leading-tight focus:outline-blue-200 focus:shadow-outline"
-                                    id="anmYears" required>
-                                    <option value="">Select Year</option>
-                                    <option value="1 Year ANM Course">1 Year Course</option>
-                                    <option value="2 Year ANM Course">2 Year Course</option>
-                                </select>
-                                <div
-                                    class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                                    <i class="fas fa-chevron-down text-sm"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add this new input field -->
                         <div id="otherEducationField" class="mt-3 hidden">
                             <input
                                 class="appearance-none border-[1.5px] border-gray-300 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-blue-200 focus:shadow-outline"
                                 type="text" id="otherEducationInput" placeholder="Please specify your education">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Years of Experience</label>
+                        <div class="relative">
+                            <select
+                                class="appearance-none border-[1.5px] border-gray-300 rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-blue-200 focus:shadow-outline"
+                                id="experience" required>
+                                <option value="">Select your experience</option>
+                                <option value="Fresher">Fresher</option>
+                                <option value="1 year">1 year</option>
+                                <option value="2-3 years">2-3 years</option>
+                                <option value="3-5 years">3-5 years</option>
+                                <option value="5-7 years">5-7 years</option>
+                                <option value="7+ years">7+ years</option>
+                            </select>
+                            <div
+                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                <i class="fas fa-chevron-down text-sm"></i>
+                            </div>
                         </div>
                     </div>
                     <div class="mb-6 relative">
@@ -1912,16 +1934,10 @@
             const phoneNumber = document.getElementById('phoneNumber').value;
             const education = document.querySelector('input[name="education"]:checked').value;
             const state = document.getElementById('state').value;
+            const experience = document.getElementById('experience').value;
 
             let finalEducation = education;
-            if (education === 'ANM') {
-                const anmYears = document.getElementById('anmYears').value;
-                if (!anmYears) {
-                    showToast('Please select ANM course duration', 'error');
-                    return;
-                }
-                finalEducation = anmYears;
-            } else if (education === 'Other') {
+            if (education === 'Other') {
                 const otherEducation = document.getElementById('otherEducationInput').value;
                 if (!otherEducation) {
                     showToast('Please specify your education', 'error');
@@ -1931,13 +1947,14 @@
             }
 
             // Create URL with parameters
-            const url = new URL('https://script.google.com/macros/s/AKfycbyujWv2bCiDYJSmlJ3ZX9aagN0HV14u2ENmA34p3MGQHAT0inG28M2v7wsFGIIVqZuY/exec');
+            const url = new URL('https://script.google.com/macros/s/AKfycbw2rBVsRHaSIffxenmz4c6DHmVEkVWIBeSkNrEvQYZl2Enge-odtrxiQ_yOk5YKOUrX/exec');
             const params = new URLSearchParams({
                 name: fullName,
                 phone_no: phoneNumber,
                 education: finalEducation,
+                experience: experience,
                 state: state,
-                websitePage: 'Odisha Page',
+                websitePage: 'Germany Page',
             });
 
             try {
@@ -1971,8 +1988,8 @@
                     }, 3000);
                 } else {
                     // Format the message for WhatsApp and redirect for eligible candidates
-                    const whatsappMessage = `Hi, I am ${fullName} from ${state}.\nI have completed ${finalEducation}.\nI am interested in the nursing job opportunity in Japan.`;
-                    const whatsappNumber = "919071002352";
+                    const whatsappMessage = `Hi, I am ${fullName} from ${state}.\nI have completed ${finalEducation}.\nI am interested in the nursing job opportunity in Germany.`;
+                    const whatsappNumber = "919916923235";
                     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
                     window.open(whatsappUrl, '_blank');
 
@@ -2033,58 +2050,6 @@
         });
     </script>
 
-    <script>
-        // Get the ANM radio button and years dropdown
-        const anmRadio = document.getElementById('anm');
-        const anmYearsField = document.getElementById('anmYearsField');
-        const anmYearsSelect = document.getElementById('anmYears');
-
-        // Add event listeners to all education radio buttons
-        document.querySelectorAll('input[name="education"]').forEach(radio => {
-            radio.addEventListener('change', function () {
-                if (anmRadio.checked) {
-                    anmYearsField.classList.remove('hidden');
-                    anmYearsSelect.required = true;
-                } else {
-                    anmYearsField.classList.add('hidden');
-                    anmYearsSelect.required = false;
-                    anmYearsSelect.value = '';
-                }
-            });
-        });
-
-        // Update form submission to include ANM years
-        applicationForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            // Get form values
-            const fullName = document.getElementById('fullName').value;
-            const phoneNumber = document.getElementById('phoneNumber').value;
-            const education = document.querySelector('input[name="education"]:checked').value;
-            const state = document.getElementById('state').value;
-
-            // If education is "Other", show ineligibility message and return
-            if (education === 'Other') {
-                document.getElementById('ineligibleUserName').textContent = fullName;
-                openThankYouModal();
-                setTimeout(() => {
-                    closeModal();
-                }, 3000);
-                return;
-            }
-
-            let finalEducation = education;
-            if (education === 'ANM') {
-                const anmYears = document.getElementById('anmYears').value;
-                if (!anmYears) {
-                    showToast('Please select ANM course duration', 'error');
-                    return;
-                }
-                finalEducation = anmYears;
-            }
-
-        });
-    </script>
 
     <!-- Thank You Modal -->
     <div id="thankYouModal" class="fixed inset-0 z-50 hidden">
@@ -2092,12 +2057,12 @@
         <div class="flex items-center justify-center min-h-screen p-4">
             <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full relative">
                 <div>
-                    <h2 class="text-2xl font-semibold text-center mb-6 text-red-600">
+                    <h2 class="text-2xl font-semibold text-center mb-6 text-blue-600">
                         Hi <span id="ineligibleUserName"></span>,
                     </h2>
                     <p class="text-center text-gray-700 text-lg mb-6">
-                        Unfortunately, you are not eligible as this program is only for nursing candidates with ANM,
-                        GNM, or B.Sc. (Nursing).
+                        Unfortunately, you are not eligible as this program is only for nursing candidates with B.Sc.
+                        (Nursing).
                     </p>
                     <p class="text-center font-semibold text-gray-600">
                         Thank you for your interest!
